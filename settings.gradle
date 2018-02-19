@@ -1,0 +1,3 @@
+rootProject.name = 'workman'
+include 'workmanrdb'
+include 'workman'
