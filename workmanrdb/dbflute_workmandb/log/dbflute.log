@@ -1,0 +1,1649 @@
+2018-02-19 16:02:27,168 [main] INFO  (DfReplaceSchemaTask#begin():92) - +------------------------------------------+
+2018-02-19 16:02:27,172 [main] INFO  (DfReplaceSchemaTask#begin():93) - |                                          |
+2018-02-19 16:02:27,172 [main] INFO  (DfReplaceSchemaTask#begin():94) - |              ReplaceSchema               |
+2018-02-19 16:02:27,177 [main] INFO  (DfReplaceSchemaTask#begin():102) - |                                          |
+2018-02-19 16:02:27,177 [main] INFO  (DfReplaceSchemaTask#begin():103) - +------------------------------------------+
+2018-02-19 16:02:27,179 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():401) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2018-02-19 16:02:30,697 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:02:30,697 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:02:30,698 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:02:30,698 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmandb
+2018-02-19 16:02:30,718 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:02:30,784 [main] INFO  (DfReplaceSchemaTask#setupLazyConnection():144) - ...Being a lazy connection: Failed to connect: url=jdbc:postgresql://localh...
+2018-02-19 16:02:30,802 [main] ERROR (DfDBFluteTaskUtil#logException():150) - Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute DBFlute Task 'ReplaceSchema'.
+
+[Advice]
+Check the exception messages and the stack traces.
+* * * * * * * * * */
+org.dbflute.infra.reps.exception.DfReplaceSchemaExecuteNotAllowedException: Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Your ReplaceSchema execution was not allowed.
+
+[Advice]
+Not found SQL files for ReplaceSchema,
+so your execution might be mistake...?
+
+[SQL Root Directory]
+playsql
+* * * * * * * * * */
+	at org.dbflute.infra.reps.DfRepsExecuteLimitter.throwReplaceSchemaExecuteNotAllowedException(DfRepsExecuteLimitter.java:76)
+	at org.dbflute.infra.reps.DfRepsExecuteLimitter.checkExecutableOrNot(DfRepsExecuteLimitter.java:60)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.checkBeforeInitialize(DfCreateSchemaProcess.java:152)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.execute(DfCreateSchemaProcess.java:140)
+	at org.dbflute.task.DfReplaceSchemaTask.createSchema(DfReplaceSchemaTask.java:301)
+	at org.dbflute.task.DfReplaceSchemaTask.executeCoreProcess(DfReplaceSchemaTask.java:246)
+	at org.dbflute.task.DfReplaceSchemaTask.processReplaceSchema(DfReplaceSchemaTask.java:232)
+	at org.dbflute.task.DfReplaceSchemaTask.doExecute(DfReplaceSchemaTask.java:158)
+	at org.dbflute.task.bs.DfAbstractTexenTask$1.callActualExecute(DfAbstractTexenTask.java:129)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.doExecute(DfTaskBasicController.java:192)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.execute(DfTaskBasicController.java:78)
+	at org.dbflute.task.bs.DfAbstractTexenTask.execute(DfAbstractTexenTask.java:151)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:105)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:357)
+	at org.apache.tools.ant.Target.performTasks(Target.java:385)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1329)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1298)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1181)
+	at org.apache.tools.ant.Main.runBuild(Main.java:698)
+	at org.apache.tools.ant.Main.startAnt(Main.java:199)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:257)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:104)
+2018-02-19 16:02:30,820 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m03s669ms *Abort
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmandb
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2018-02-19 16:05:45,647 [main] INFO  (DfReplaceSchemaTask#begin():92) - +------------------------------------------+
+2018-02-19 16:05:45,651 [main] INFO  (DfReplaceSchemaTask#begin():93) - |                                          |
+2018-02-19 16:05:45,652 [main] INFO  (DfReplaceSchemaTask#begin():94) - |              ReplaceSchema               |
+2018-02-19 16:05:45,657 [main] INFO  (DfReplaceSchemaTask#begin():102) - |                                          |
+2018-02-19 16:05:45,657 [main] INFO  (DfReplaceSchemaTask#begin():103) - +------------------------------------------+
+2018-02-19 16:05:45,659 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():401) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2018-02-19 16:05:47,059 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:05:47,060 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:05:47,061 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:05:47,062 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmandb
+2018-02-19 16:05:47,082 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:05:47,147 [main] INFO  (DfReplaceSchemaTask#setupLazyConnection():144) - ...Being a lazy connection: Failed to connect: url=jdbc:postgresql://localh...
+2018-02-19 16:05:47,166 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():229) - 
+2018-02-19 16:05:47,167 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():230) - * * * * * * * * * * *
+2018-02-19 16:05:47,167 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():231) - *                   *
+2018-02-19 16:05:47,167 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():232) - * Initialize Schema *
+2018-02-19 16:05:47,168 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():233) - *                   *
+2018-02-19 16:05:47,169 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():234) - * * * * * * * * * * *
+2018-02-19 16:05:47,170 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():236) - *Passed because it's a lazy connection
+2018-02-19 16:05:47,172 [main] INFO  (DfCreateSchemaProcess#createSchema():266) - 
+2018-02-19 16:05:47,172 [main] INFO  (DfCreateSchemaProcess#createSchema():267) - * * * * * * * * *
+2018-02-19 16:05:47,172 [main] INFO  (DfCreateSchemaProcess#createSchema():268) - *               *
+2018-02-19 16:05:47,173 [main] INFO  (DfCreateSchemaProcess#createSchema():269) - * Create Schema *
+2018-02-19 16:05:47,173 [main] INFO  (DfCreateSchemaProcess#createSchema():270) - *               *
+2018-02-19 16:05:47,173 [main] INFO  (DfCreateSchemaProcess#createSchema():271) - * * * * * * * * *
+2018-02-19 16:05:47,178 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: replace-schema.sql
+2018-02-19 16:05:47,181 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+2018-02-19 16:05:47,187 [main] INFO  (DfCreateSchemaProcess$DfSqlFileRunnerExecuteCreateSchema#lazyConnectIfNeeds():466) - ...Connecting by main user lazily
+2018-02-19 16:05:47,187 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:05:47,188 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:05:47,188 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:05:47,188 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmandb
+2018-02-19 16:05:47,189 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:05:47,192 [main] INFO  (DfSqlFileFireMan#fire():89) - {Create Schema}: success=0 failure=1 *break (in 1 files)
+2018-02-19 16:05:47,254 [main] ERROR (DfDBFluteTaskUtil#logException():150) - Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute DBFlute Task 'ReplaceSchema'.
+
+[Advice]
+Check the exception messages and the stack traces.
+* * * * * * * * * */
+org.dbflute.exception.SQLFailureException: Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute the SQL!
+
+[SQL File]
+playsql/replace-schema.sql
+
+[Executed SQL]
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+
+[SQLState]
+08001
+
+[ErrorCode]
+0
+
+[SQLException]
+org.dbflute.exception.DfJDBCException
+Failed to connect: url=jdbc:postgresql://localhost:5432/workmandb user=workmandb
+
+[NextException]
+org.postgresql.util.PSQLException
+Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+* * * * * * * * * */
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.throwSQLFailureException(DfSqlFileRunnerBase.java:587)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:80)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.runTransaction(DfSqlFileRunnerBase.java:122)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.processSqlFile(DfSqlFileFireMan.java:169)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.fire(DfSqlFileFireMan.java:67)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.createSchema(DfCreateSchemaProcess.java:274)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.execute(DfCreateSchemaProcess.java:143)
+	at org.dbflute.task.DfReplaceSchemaTask.createSchema(DfReplaceSchemaTask.java:301)
+	at org.dbflute.task.DfReplaceSchemaTask.executeCoreProcess(DfReplaceSchemaTask.java:246)
+	at org.dbflute.task.DfReplaceSchemaTask.processReplaceSchema(DfReplaceSchemaTask.java:232)
+	at org.dbflute.task.DfReplaceSchemaTask.doExecute(DfReplaceSchemaTask.java:158)
+	at org.dbflute.task.bs.DfAbstractTexenTask$1.callActualExecute(DfAbstractTexenTask.java:129)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.doExecute(DfTaskBasicController.java:192)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.execute(DfTaskBasicController.java:78)
+	at org.dbflute.task.bs.DfAbstractTexenTask.execute(DfAbstractTexenTask.java:151)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:105)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:357)
+	at org.apache.tools.ant.Target.performTasks(Target.java:385)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1329)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1298)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1181)
+	at org.apache.tools.ant.Main.runBuild(Main.java:698)
+	at org.apache.tools.ant.Main.startAnt(Main.java:199)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:257)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:104)
+Caused by: org.dbflute.exception.DfJDBCException: Failed to connect: url=jdbc:postgresql://localhost:5432/workmandb user=workmandb
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.createConnection(DfDataSourceHandler.java:170)
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.processCachedConnection(DfDataSourceHandler.java:154)
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.getConnection(DfDataSourceHandler.java:137)
+	at org.dbflute.helper.jdbc.connection.DfFittingDataSource.getConnection(DfFittingDataSource.java:44)
+	at org.dbflute.helper.jdbc.context.DfSchemaSource.getConnection(DfSchemaSource.java:82)
+	at org.dbflute.task.DfReplaceSchemaTask.setupDataSource(DfReplaceSchemaTask.java:130)
+	at org.dbflute.task.DfReplaceSchemaTask$2.callbackSetupDataSource(DfReplaceSchemaTask.java:325)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.setupDataSource(DfCreateSchemaProcess.java:133)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess$DfSqlFileRunnerExecuteCreateSchema.lazyConnectIfNeeds(DfCreateSchemaProcess.java:467)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:61)
+	... 29 more
+2018-02-19 16:05:47,280 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m01s647ms *Abort
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmandb
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+ {Create Schema}: success=0 failure=1 *break (in 1 files)
+  x replace-schema.sql
+   >> (failed: Look at the exception message)
+    * * * * * *
+    * Failure *
+    * * * * * *
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2018-02-19 16:12:42,063 [main] INFO  (DfReplaceSchemaTask#begin():92) - +------------------------------------------+
+2018-02-19 16:12:42,067 [main] INFO  (DfReplaceSchemaTask#begin():93) - |                                          |
+2018-02-19 16:12:42,067 [main] INFO  (DfReplaceSchemaTask#begin():94) - |              ReplaceSchema               |
+2018-02-19 16:12:42,072 [main] INFO  (DfReplaceSchemaTask#begin():102) - |                                          |
+2018-02-19 16:12:42,073 [main] INFO  (DfReplaceSchemaTask#begin():103) - +------------------------------------------+
+2018-02-19 16:12:42,074 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():401) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2018-02-19 16:12:43,270 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:12:43,270 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:12:43,271 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:12:43,271 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmandb
+2018-02-19 16:12:43,290 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:12:43,375 [main] INFO  (DfReplaceSchemaTask#setupLazyConnection():144) - ...Being a lazy connection: Failed to connect: url=jdbc:postgresql://localh...
+2018-02-19 16:12:43,399 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():229) - 
+2018-02-19 16:12:43,399 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():230) - * * * * * * * * * * *
+2018-02-19 16:12:43,400 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():231) - *                   *
+2018-02-19 16:12:43,400 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():232) - * Initialize Schema *
+2018-02-19 16:12:43,401 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():233) - *                   *
+2018-02-19 16:12:43,402 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():234) - * * * * * * * * * * *
+2018-02-19 16:12:43,403 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():236) - *Passed because it's a lazy connection
+2018-02-19 16:12:43,404 [main] INFO  (DfCreateSchemaProcess#createSchema():266) - 
+2018-02-19 16:12:43,405 [main] INFO  (DfCreateSchemaProcess#createSchema():267) - * * * * * * * * *
+2018-02-19 16:12:43,405 [main] INFO  (DfCreateSchemaProcess#createSchema():268) - *               *
+2018-02-19 16:12:43,405 [main] INFO  (DfCreateSchemaProcess#createSchema():269) - * Create Schema *
+2018-02-19 16:12:43,406 [main] INFO  (DfCreateSchemaProcess#createSchema():270) - *               *
+2018-02-19 16:12:43,406 [main] INFO  (DfCreateSchemaProcess#createSchema():271) - * * * * * * * * *
+2018-02-19 16:12:43,413 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: replace-schema.sql
+2018-02-19 16:12:43,418 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+2018-02-19 16:12:43,426 [main] INFO  (DfCreateSchemaProcess$DfSqlFileRunnerExecuteCreateSchema#lazyConnectIfNeeds():466) - ...Connecting by main user lazily
+2018-02-19 16:12:43,426 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:12:43,427 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:12:43,427 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:12:43,427 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmandb
+2018-02-19 16:12:43,427 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:12:43,434 [main] INFO  (DfSqlFileFireMan#fire():89) - {Create Schema}: success=0 failure=1 *break (in 1 files)
+2018-02-19 16:12:43,507 [main] ERROR (DfDBFluteTaskUtil#logException():150) - Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute DBFlute Task 'ReplaceSchema'.
+
+[Advice]
+Check the exception messages and the stack traces.
+* * * * * * * * * */
+org.dbflute.exception.SQLFailureException: Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute the SQL!
+
+[SQL File]
+playsql/replace-schema.sql
+
+[Executed SQL]
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+
+[SQLState]
+28P01
+
+[ErrorCode]
+0
+
+[SQLException]
+org.dbflute.exception.DfJDBCException
+Failed to connect: url=jdbc:postgresql://localhost:5432/workmandb user=workmandb
+
+[NextException]
+org.postgresql.util.PSQLException
+FATAL: ユーザ"workmandb"のパスワード認証に失敗しました
+* * * * * * * * * */
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.throwSQLFailureException(DfSqlFileRunnerBase.java:587)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:80)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.runTransaction(DfSqlFileRunnerBase.java:122)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.processSqlFile(DfSqlFileFireMan.java:169)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.fire(DfSqlFileFireMan.java:67)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.createSchema(DfCreateSchemaProcess.java:274)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.execute(DfCreateSchemaProcess.java:143)
+	at org.dbflute.task.DfReplaceSchemaTask.createSchema(DfReplaceSchemaTask.java:301)
+	at org.dbflute.task.DfReplaceSchemaTask.executeCoreProcess(DfReplaceSchemaTask.java:246)
+	at org.dbflute.task.DfReplaceSchemaTask.processReplaceSchema(DfReplaceSchemaTask.java:232)
+	at org.dbflute.task.DfReplaceSchemaTask.doExecute(DfReplaceSchemaTask.java:158)
+	at org.dbflute.task.bs.DfAbstractTexenTask$1.callActualExecute(DfAbstractTexenTask.java:129)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.doExecute(DfTaskBasicController.java:192)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.execute(DfTaskBasicController.java:78)
+	at org.dbflute.task.bs.DfAbstractTexenTask.execute(DfAbstractTexenTask.java:151)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:105)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:357)
+	at org.apache.tools.ant.Target.performTasks(Target.java:385)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1329)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1298)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1181)
+	at org.apache.tools.ant.Main.runBuild(Main.java:698)
+	at org.apache.tools.ant.Main.startAnt(Main.java:199)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:257)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:104)
+Caused by: org.dbflute.exception.DfJDBCException: Failed to connect: url=jdbc:postgresql://localhost:5432/workmandb user=workmandb
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.createConnection(DfDataSourceHandler.java:170)
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.processCachedConnection(DfDataSourceHandler.java:154)
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.getConnection(DfDataSourceHandler.java:137)
+	at org.dbflute.helper.jdbc.connection.DfFittingDataSource.getConnection(DfFittingDataSource.java:44)
+	at org.dbflute.helper.jdbc.context.DfSchemaSource.getConnection(DfSchemaSource.java:82)
+	at org.dbflute.task.DfReplaceSchemaTask.setupDataSource(DfReplaceSchemaTask.java:130)
+	at org.dbflute.task.DfReplaceSchemaTask$2.callbackSetupDataSource(DfReplaceSchemaTask.java:325)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.setupDataSource(DfCreateSchemaProcess.java:133)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess$DfSqlFileRunnerExecuteCreateSchema.lazyConnectIfNeeds(DfCreateSchemaProcess.java:467)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:61)
+	... 29 more
+2018-02-19 16:12:43,528 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m01s480ms *Abort
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmandb
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+ {Create Schema}: success=0 failure=1 *break (in 1 files)
+  x replace-schema.sql
+   >> (failed: Look at the exception message)
+    * * * * * *
+    * Failure *
+    * * * * * *
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2018-02-19 16:19:46,487 [main] INFO  (DfReplaceSchemaTask#begin():92) - +------------------------------------------+
+2018-02-19 16:19:46,494 [main] INFO  (DfReplaceSchemaTask#begin():93) - |                                          |
+2018-02-19 16:19:46,495 [main] INFO  (DfReplaceSchemaTask#begin():94) - |              ReplaceSchema               |
+2018-02-19 16:19:46,501 [main] INFO  (DfReplaceSchemaTask#begin():102) - |                                          |
+2018-02-19 16:19:46,502 [main] INFO  (DfReplaceSchemaTask#begin():103) - +------------------------------------------+
+2018-02-19 16:19:46,504 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():401) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2018-02-19 16:19:48,230 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:19:48,230 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:19:48,230 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:19:48,231 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workman
+2018-02-19 16:19:48,267 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:19:48,399 [main] INFO  (DfReplaceSchemaTask#setupLazyConnection():144) - ...Being a lazy connection: Failed to connect: url=jdbc:postgresql://localh...
+2018-02-19 16:19:48,419 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():229) - 
+2018-02-19 16:19:48,419 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():230) - * * * * * * * * * * *
+2018-02-19 16:19:48,419 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():231) - *                   *
+2018-02-19 16:19:48,420 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():232) - * Initialize Schema *
+2018-02-19 16:19:48,421 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():233) - *                   *
+2018-02-19 16:19:48,422 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():234) - * * * * * * * * * * *
+2018-02-19 16:19:48,422 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():236) - *Passed because it's a lazy connection
+2018-02-19 16:19:48,423 [main] INFO  (DfCreateSchemaProcess#createSchema():266) - 
+2018-02-19 16:19:48,424 [main] INFO  (DfCreateSchemaProcess#createSchema():267) - * * * * * * * * *
+2018-02-19 16:19:48,424 [main] INFO  (DfCreateSchemaProcess#createSchema():268) - *               *
+2018-02-19 16:19:48,425 [main] INFO  (DfCreateSchemaProcess#createSchema():269) - * Create Schema *
+2018-02-19 16:19:48,425 [main] INFO  (DfCreateSchemaProcess#createSchema():270) - *               *
+2018-02-19 16:19:48,425 [main] INFO  (DfCreateSchemaProcess#createSchema():271) - * * * * * * * * *
+2018-02-19 16:19:48,429 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: replace-schema.sql
+2018-02-19 16:19:48,434 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+2018-02-19 16:19:48,456 [main] INFO  (DfCreateSchemaProcess$DfSqlFileRunnerExecuteCreateSchema#lazyConnectIfNeeds():466) - ...Connecting by main user lazily
+2018-02-19 16:19:48,457 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:19:48,457 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:19:48,457 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:19:48,458 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workman
+2018-02-19 16:19:48,458 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:19:48,467 [main] INFO  (DfSqlFileFireMan#fire():89) - {Create Schema}: success=0 failure=1 *break (in 1 files)
+2018-02-19 16:19:48,556 [main] ERROR (DfDBFluteTaskUtil#logException():150) - Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute DBFlute Task 'ReplaceSchema'.
+
+[Advice]
+Check the exception messages and the stack traces.
+* * * * * * * * * */
+org.dbflute.exception.SQLFailureException: Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute the SQL!
+
+[SQL File]
+playsql/replace-schema.sql
+
+[Executed SQL]
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+
+[SQLState]
+3D000
+
+[ErrorCode]
+0
+
+[SQLException]
+org.dbflute.exception.DfJDBCException
+Failed to connect: url=jdbc:postgresql://localhost:5432/workmandb user=workman
+
+[NextException]
+org.postgresql.util.PSQLException
+FATAL: データベース"workmandb"は存在しません
+* * * * * * * * * */
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.throwSQLFailureException(DfSqlFileRunnerBase.java:587)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:80)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.runTransaction(DfSqlFileRunnerBase.java:122)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.processSqlFile(DfSqlFileFireMan.java:169)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.fire(DfSqlFileFireMan.java:67)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.createSchema(DfCreateSchemaProcess.java:274)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.execute(DfCreateSchemaProcess.java:143)
+	at org.dbflute.task.DfReplaceSchemaTask.createSchema(DfReplaceSchemaTask.java:301)
+	at org.dbflute.task.DfReplaceSchemaTask.executeCoreProcess(DfReplaceSchemaTask.java:246)
+	at org.dbflute.task.DfReplaceSchemaTask.processReplaceSchema(DfReplaceSchemaTask.java:232)
+	at org.dbflute.task.DfReplaceSchemaTask.doExecute(DfReplaceSchemaTask.java:158)
+	at org.dbflute.task.bs.DfAbstractTexenTask$1.callActualExecute(DfAbstractTexenTask.java:129)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.doExecute(DfTaskBasicController.java:192)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.execute(DfTaskBasicController.java:78)
+	at org.dbflute.task.bs.DfAbstractTexenTask.execute(DfAbstractTexenTask.java:151)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:105)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:357)
+	at org.apache.tools.ant.Target.performTasks(Target.java:385)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1329)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1298)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1181)
+	at org.apache.tools.ant.Main.runBuild(Main.java:698)
+	at org.apache.tools.ant.Main.startAnt(Main.java:199)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:257)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:104)
+Caused by: org.dbflute.exception.DfJDBCException: Failed to connect: url=jdbc:postgresql://localhost:5432/workmandb user=workman
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.createConnection(DfDataSourceHandler.java:170)
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.processCachedConnection(DfDataSourceHandler.java:154)
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.getConnection(DfDataSourceHandler.java:137)
+	at org.dbflute.helper.jdbc.connection.DfFittingDataSource.getConnection(DfFittingDataSource.java:44)
+	at org.dbflute.helper.jdbc.context.DfSchemaSource.getConnection(DfSchemaSource.java:82)
+	at org.dbflute.task.DfReplaceSchemaTask.setupDataSource(DfReplaceSchemaTask.java:130)
+	at org.dbflute.task.DfReplaceSchemaTask$2.callbackSetupDataSource(DfReplaceSchemaTask.java:325)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.setupDataSource(DfCreateSchemaProcess.java:133)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess$DfSqlFileRunnerExecuteCreateSchema.lazyConnectIfNeeds(DfCreateSchemaProcess.java:467)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:61)
+	... 29 more
+2018-02-19 16:19:48,579 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m02s125ms *Abort
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workman
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+ {Create Schema}: success=0 failure=1 *break (in 1 files)
+  x replace-schema.sql
+   >> (failed: Look at the exception message)
+    * * * * * *
+    * Failure *
+    * * * * * *
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2018-02-19 16:25:15,297 [main] INFO  (DfReplaceSchemaTask#begin():92) - +------------------------------------------+
+2018-02-19 16:25:15,301 [main] INFO  (DfReplaceSchemaTask#begin():93) - |                                          |
+2018-02-19 16:25:15,301 [main] INFO  (DfReplaceSchemaTask#begin():94) - |              ReplaceSchema               |
+2018-02-19 16:25:15,307 [main] INFO  (DfReplaceSchemaTask#begin():102) - |                                          |
+2018-02-19 16:25:15,307 [main] INFO  (DfReplaceSchemaTask#begin():103) - +------------------------------------------+
+2018-02-19 16:25:15,309 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():401) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2018-02-19 16:25:16,421 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:25:16,422 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:25:16,422 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:25:16,422 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workman
+2018-02-19 16:25:16,442 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:25:16,521 [main] INFO  (DfReplaceSchemaTask#setupLazyConnection():144) - ...Being a lazy connection: Failed to connect: url=jdbc:postgresql://localh...
+2018-02-19 16:25:16,544 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():229) - 
+2018-02-19 16:25:16,545 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():230) - * * * * * * * * * * *
+2018-02-19 16:25:16,545 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():231) - *                   *
+2018-02-19 16:25:16,546 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():232) - * Initialize Schema *
+2018-02-19 16:25:16,547 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():233) - *                   *
+2018-02-19 16:25:16,548 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():234) - * * * * * * * * * * *
+2018-02-19 16:25:16,548 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():236) - *Passed because it's a lazy connection
+2018-02-19 16:25:16,550 [main] INFO  (DfCreateSchemaProcess#createSchema():266) - 
+2018-02-19 16:25:16,552 [main] INFO  (DfCreateSchemaProcess#createSchema():267) - * * * * * * * * *
+2018-02-19 16:25:16,554 [main] INFO  (DfCreateSchemaProcess#createSchema():268) - *               *
+2018-02-19 16:25:16,554 [main] INFO  (DfCreateSchemaProcess#createSchema():269) - * Create Schema *
+2018-02-19 16:25:16,555 [main] INFO  (DfCreateSchemaProcess#createSchema():270) - *               *
+2018-02-19 16:25:16,555 [main] INFO  (DfCreateSchemaProcess#createSchema():271) - * * * * * * * * *
+2018-02-19 16:25:16,561 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: replace-schema.sql
+2018-02-19 16:25:16,566 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+2018-02-19 16:25:16,578 [main] INFO  (DfCreateSchemaProcess$DfSqlFileRunnerExecuteCreateSchema#lazyConnectIfNeeds():466) - ...Connecting by main user lazily
+2018-02-19 16:25:16,579 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:25:16,579 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:25:16,580 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:25:16,580 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workman
+2018-02-19 16:25:16,581 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:25:16,590 [main] INFO  (DfSqlFileFireMan#fire():89) - {Create Schema}: success=0 failure=1 *break (in 1 files)
+2018-02-19 16:25:16,661 [main] ERROR (DfDBFluteTaskUtil#logException():150) - Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute DBFlute Task 'ReplaceSchema'.
+
+[Advice]
+Check the exception messages and the stack traces.
+* * * * * * * * * */
+org.dbflute.exception.SQLFailureException: Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute the SQL!
+
+[SQL File]
+playsql/replace-schema.sql
+
+[Executed SQL]
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+
+[SQLState]
+28P01
+
+[ErrorCode]
+0
+
+[SQLException]
+org.dbflute.exception.DfJDBCException
+Failed to connect: url=jdbc:postgresql://localhost:5432/workmandb user=workman
+
+[NextException]
+org.postgresql.util.PSQLException
+FATAL: ユーザ"workman"のパスワード認証に失敗しました
+* * * * * * * * * */
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.throwSQLFailureException(DfSqlFileRunnerBase.java:587)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:80)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.runTransaction(DfSqlFileRunnerBase.java:122)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.processSqlFile(DfSqlFileFireMan.java:169)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.fire(DfSqlFileFireMan.java:67)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.createSchema(DfCreateSchemaProcess.java:274)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.execute(DfCreateSchemaProcess.java:143)
+	at org.dbflute.task.DfReplaceSchemaTask.createSchema(DfReplaceSchemaTask.java:301)
+	at org.dbflute.task.DfReplaceSchemaTask.executeCoreProcess(DfReplaceSchemaTask.java:246)
+	at org.dbflute.task.DfReplaceSchemaTask.processReplaceSchema(DfReplaceSchemaTask.java:232)
+	at org.dbflute.task.DfReplaceSchemaTask.doExecute(DfReplaceSchemaTask.java:158)
+	at org.dbflute.task.bs.DfAbstractTexenTask$1.callActualExecute(DfAbstractTexenTask.java:129)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.doExecute(DfTaskBasicController.java:192)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.execute(DfTaskBasicController.java:78)
+	at org.dbflute.task.bs.DfAbstractTexenTask.execute(DfAbstractTexenTask.java:151)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:105)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:357)
+	at org.apache.tools.ant.Target.performTasks(Target.java:385)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1329)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1298)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1181)
+	at org.apache.tools.ant.Main.runBuild(Main.java:698)
+	at org.apache.tools.ant.Main.startAnt(Main.java:199)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:257)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:104)
+Caused by: org.dbflute.exception.DfJDBCException: Failed to connect: url=jdbc:postgresql://localhost:5432/workmandb user=workman
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.createConnection(DfDataSourceHandler.java:170)
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.processCachedConnection(DfDataSourceHandler.java:154)
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.getConnection(DfDataSourceHandler.java:137)
+	at org.dbflute.helper.jdbc.connection.DfFittingDataSource.getConnection(DfFittingDataSource.java:44)
+	at org.dbflute.helper.jdbc.context.DfSchemaSource.getConnection(DfSchemaSource.java:82)
+	at org.dbflute.task.DfReplaceSchemaTask.setupDataSource(DfReplaceSchemaTask.java:130)
+	at org.dbflute.task.DfReplaceSchemaTask$2.callbackSetupDataSource(DfReplaceSchemaTask.java:325)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.setupDataSource(DfCreateSchemaProcess.java:133)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess$DfSqlFileRunnerExecuteCreateSchema.lazyConnectIfNeeds(DfCreateSchemaProcess.java:467)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:61)
+	... 29 more
+2018-02-19 16:25:16,687 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m01s405ms *Abort
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workman
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+ {Create Schema}: success=0 failure=1 *break (in 1 files)
+  x replace-schema.sql
+   >> (failed: Look at the exception message)
+    * * * * * *
+    * Failure *
+    * * * * * *
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2018-02-19 16:25:55,211 [main] INFO  (DfReplaceSchemaTask#begin():92) - +------------------------------------------+
+2018-02-19 16:25:55,215 [main] INFO  (DfReplaceSchemaTask#begin():93) - |                                          |
+2018-02-19 16:25:55,216 [main] INFO  (DfReplaceSchemaTask#begin():94) - |              ReplaceSchema               |
+2018-02-19 16:25:55,226 [main] INFO  (DfReplaceSchemaTask#begin():102) - |                                          |
+2018-02-19 16:25:55,226 [main] INFO  (DfReplaceSchemaTask#begin():103) - +------------------------------------------+
+2018-02-19 16:25:55,228 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():401) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2018-02-19 16:25:56,114 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:25:56,117 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:25:56,117 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:25:56,117 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmanuser
+2018-02-19 16:25:56,146 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:25:56,279 [main] INFO  (DfReplaceSchemaTask#setupLazyConnection():144) - ...Being a lazy connection: Failed to connect: url=jdbc:postgresql://localh...
+2018-02-19 16:25:56,295 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():229) - 
+2018-02-19 16:25:56,296 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():230) - * * * * * * * * * * *
+2018-02-19 16:25:56,296 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():231) - *                   *
+2018-02-19 16:25:56,297 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():232) - * Initialize Schema *
+2018-02-19 16:25:56,298 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():233) - *                   *
+2018-02-19 16:25:56,299 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():234) - * * * * * * * * * * *
+2018-02-19 16:25:56,299 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():236) - *Passed because it's a lazy connection
+2018-02-19 16:25:56,300 [main] INFO  (DfCreateSchemaProcess#createSchema():266) - 
+2018-02-19 16:25:56,301 [main] INFO  (DfCreateSchemaProcess#createSchema():267) - * * * * * * * * *
+2018-02-19 16:25:56,301 [main] INFO  (DfCreateSchemaProcess#createSchema():268) - *               *
+2018-02-19 16:25:56,301 [main] INFO  (DfCreateSchemaProcess#createSchema():269) - * Create Schema *
+2018-02-19 16:25:56,301 [main] INFO  (DfCreateSchemaProcess#createSchema():270) - *               *
+2018-02-19 16:25:56,302 [main] INFO  (DfCreateSchemaProcess#createSchema():271) - * * * * * * * * *
+2018-02-19 16:25:56,306 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: replace-schema.sql
+2018-02-19 16:25:56,310 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+2018-02-19 16:25:56,315 [main] INFO  (DfCreateSchemaProcess$DfSqlFileRunnerExecuteCreateSchema#lazyConnectIfNeeds():466) - ...Connecting by main user lazily
+2018-02-19 16:25:56,320 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:25:56,321 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:25:56,321 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:25:56,322 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmanuser
+2018-02-19 16:25:56,322 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:25:56,340 [main] INFO  (DfSqlFileFireMan#fire():89) - {Create Schema}: success=0 failure=1 *break (in 1 files)
+2018-02-19 16:25:56,430 [main] ERROR (DfDBFluteTaskUtil#logException():150) - Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute DBFlute Task 'ReplaceSchema'.
+
+[Advice]
+Check the exception messages and the stack traces.
+* * * * * * * * * */
+org.dbflute.exception.SQLFailureException: Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute the SQL!
+
+[SQL File]
+playsql/replace-schema.sql
+
+[Executed SQL]
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+
+[SQLState]
+3D000
+
+[ErrorCode]
+0
+
+[SQLException]
+org.dbflute.exception.DfJDBCException
+Failed to connect: url=jdbc:postgresql://localhost:5432/workmandb user=workmanuser
+
+[NextException]
+org.postgresql.util.PSQLException
+FATAL: データベース"workmandb"は存在しません
+* * * * * * * * * */
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.throwSQLFailureException(DfSqlFileRunnerBase.java:587)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:80)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.runTransaction(DfSqlFileRunnerBase.java:122)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.processSqlFile(DfSqlFileFireMan.java:169)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.fire(DfSqlFileFireMan.java:67)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.createSchema(DfCreateSchemaProcess.java:274)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.execute(DfCreateSchemaProcess.java:143)
+	at org.dbflute.task.DfReplaceSchemaTask.createSchema(DfReplaceSchemaTask.java:301)
+	at org.dbflute.task.DfReplaceSchemaTask.executeCoreProcess(DfReplaceSchemaTask.java:246)
+	at org.dbflute.task.DfReplaceSchemaTask.processReplaceSchema(DfReplaceSchemaTask.java:232)
+	at org.dbflute.task.DfReplaceSchemaTask.doExecute(DfReplaceSchemaTask.java:158)
+	at org.dbflute.task.bs.DfAbstractTexenTask$1.callActualExecute(DfAbstractTexenTask.java:129)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.doExecute(DfTaskBasicController.java:192)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.execute(DfTaskBasicController.java:78)
+	at org.dbflute.task.bs.DfAbstractTexenTask.execute(DfAbstractTexenTask.java:151)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:105)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:357)
+	at org.apache.tools.ant.Target.performTasks(Target.java:385)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1329)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1298)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1181)
+	at org.apache.tools.ant.Main.runBuild(Main.java:698)
+	at org.apache.tools.ant.Main.startAnt(Main.java:199)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:257)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:104)
+Caused by: org.dbflute.exception.DfJDBCException: Failed to connect: url=jdbc:postgresql://localhost:5432/workmandb user=workmanuser
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.createConnection(DfDataSourceHandler.java:170)
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.processCachedConnection(DfDataSourceHandler.java:154)
+	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.getConnection(DfDataSourceHandler.java:137)
+	at org.dbflute.helper.jdbc.connection.DfFittingDataSource.getConnection(DfFittingDataSource.java:44)
+	at org.dbflute.helper.jdbc.context.DfSchemaSource.getConnection(DfSchemaSource.java:82)
+	at org.dbflute.task.DfReplaceSchemaTask.setupDataSource(DfReplaceSchemaTask.java:130)
+	at org.dbflute.task.DfReplaceSchemaTask$2.callbackSetupDataSource(DfReplaceSchemaTask.java:325)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.setupDataSource(DfCreateSchemaProcess.java:133)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess$DfSqlFileRunnerExecuteCreateSchema.lazyConnectIfNeeds(DfCreateSchemaProcess.java:467)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:61)
+	... 29 more
+2018-02-19 16:25:56,449 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m01s247ms *Abort
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmanuser
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+ {Create Schema}: success=0 failure=1 *break (in 1 files)
+  x replace-schema.sql
+   >> (failed: Look at the exception message)
+    * * * * * *
+    * Failure *
+    * * * * * *
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2018-02-19 16:31:03,704 [main] INFO  (DfReplaceSchemaTask#begin():92) - +------------------------------------------+
+2018-02-19 16:31:03,708 [main] INFO  (DfReplaceSchemaTask#begin():93) - |                                          |
+2018-02-19 16:31:03,708 [main] INFO  (DfReplaceSchemaTask#begin():94) - |              ReplaceSchema               |
+2018-02-19 16:31:03,714 [main] INFO  (DfReplaceSchemaTask#begin():102) - |                                          |
+2018-02-19 16:31:03,714 [main] INFO  (DfReplaceSchemaTask#begin():103) - +------------------------------------------+
+2018-02-19 16:31:03,715 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():401) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2018-02-19 16:31:05,757 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:31:05,758 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:31:05,758 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:31:05,758 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmanuser
+2018-02-19 16:31:05,784 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:31:05,950 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():233) -   product = PostgreSQL 9.6.6
+2018-02-19 16:31:05,950 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():234) -   driver  = PostgreSQL Native Driver PostgreSQL 9.4.1212.jre6 for JDBC 4.0
+2018-02-19 16:31:05,959 [main] INFO  (DfCurrentSchemaConnector#executeCurrentSchemaSql():77) - ...Connecting to the schema
+2018-02-19 16:31:05,960 [main] INFO  (DfCurrentSchemaConnector#executeCurrentSchemaSql():78) - set search_path to public
+2018-02-19 16:31:05,982 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():229) - 
+2018-02-19 16:31:05,983 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():230) - * * * * * * * * * * *
+2018-02-19 16:31:05,984 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():231) - *                   *
+2018-02-19 16:31:05,984 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():232) - * Initialize Schema *
+2018-02-19 16:31:05,984 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():233) - *                   *
+2018-02-19 16:31:05,984 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():234) - * * * * * * * * * * *
+2018-02-19 16:31:06,010 [main] INFO  (DfTableExtractor#doGetTableList():66) - ...Getting tables:
+2018-02-19 16:31:06,010 [main] INFO  (DfTableExtractor#doGetTableList():67) -   schema = {workmandb.public as main}
+2018-02-19 16:31:06,011 [main] INFO  (DfTableExtractor#doGetTableList():68) -   types  = [TABLE, VIEW]
+2018-02-19 16:31:06,052 [main] INFO  (DfCreateSchemaProcess#createSchema():266) - 
+2018-02-19 16:31:06,052 [main] INFO  (DfCreateSchemaProcess#createSchema():267) - * * * * * * * * *
+2018-02-19 16:31:06,053 [main] INFO  (DfCreateSchemaProcess#createSchema():268) - *               *
+2018-02-19 16:31:06,053 [main] INFO  (DfCreateSchemaProcess#createSchema():269) - * Create Schema *
+2018-02-19 16:31:06,054 [main] INFO  (DfCreateSchemaProcess#createSchema():270) - *               *
+2018-02-19 16:31:06,054 [main] INFO  (DfCreateSchemaProcess#createSchema():271) - * * * * * * * * *
+2018-02-19 16:31:06,060 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: replace-schema.sql
+2018-02-19 16:31:06,064 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+2018-02-19 16:31:06,080 [main] INFO  (DfSqlFileFireMan#fire():89) - {Create Schema}: success=0 failure=1 *break (in 1 files)
+2018-02-19 16:31:06,145 [main] ERROR (DfDBFluteTaskUtil#logException():150) - Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute DBFlute Task 'ReplaceSchema'.
+
+[Advice]
+Check the exception messages and the stack traces.
+
+[Database Product]
+PostgreSQL 9.6.6
+
+[JDBC Driver]
+PostgreSQL Native Driver PostgreSQL 9.4.1212.jre6 for JDBC 4.0
+* * * * * * * * * */
+org.dbflute.exception.SQLFailureException: Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute the SQL!
+
+[SQL File]
+playsql/replace-schema.sql
+
+[Executed SQL]
+CREATE TABLE ACCOUNTANT_SYSTEM_CONNECT
+(
+    ACCOUNTANT_SYSTEM_CONNECT_ID BIGINT NOT NULL AUTO_INCREMENT COMMENT '経理システム連携ID',
+    RECRUITER_COMPANY_ID BIGINT NOT NULL UNIQUE COMMENT 'リクルーター企業ID : リクルーター企業ID',
+    PRO_ACTIVE_SYSTEM_ID BIGINT NOT NULL UNIQUE COMMENT 'プロアクティブシステムID',
+    MST_BANK_ACCOUNT_ID BIGINT UNIQUE COMMENT '銀行口座マスターID',
+    BANK_ACCOUNT_USE_START_TM DATETIME COMMENT '銀行口座使用開始日 : 銀行口座マスターに存在する銀行口座の使用開始日を格納する。',
+    BANK_ACCOUNT_CONNECTED_TM DATETIME COMMENT '銀行口座情報連携完了日 : 経理システム側に銀行口座情報を連携した日を格納する。',
+    LAST_ISSUE_TM DATETIME COMMENT '請求書発行最終日 : 請求書発行を行った最終日を格納する。',
+    INS_DATETIME DATETIME NOT NULL COMMENT 'Insert日時',
+    UPD_DATETIME DATETIME NOT NULL COMMENT 'Update日時',
+    INS_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Insertトレース : [ユーザー種別:ID,システム種別:システム名]',
+    UPD_TRACE VARCHAR(256) DEFAULT 'M:0,CSL:Manual' NOT NULL COMMENT 'Updateトレース : [ユーザー種別:ID,システム種別:システム名]',
+    PRIMARY KEY (ACCOUNTANT_SYSTEM_CONNECT_ID)
+) COMMENT = '経理システム連携'
+
+[SQLState]
+42601
+
+[ErrorCode]
+0
+
+[SQLException]
+org.postgresql.util.PSQLException
+ERROR: "AUTO_INCREMENT"またはその近辺で構文エラー
+  ポジション: 91
+* * * * * * * * * */
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.throwSQLFailureException(DfSqlFileRunnerBase.java:587)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:80)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerBase.runTransaction(DfSqlFileRunnerBase.java:122)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.processSqlFile(DfSqlFileFireMan.java:169)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileFireMan.fire(DfSqlFileFireMan.java:67)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.createSchema(DfCreateSchemaProcess.java:274)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess.execute(DfCreateSchemaProcess.java:143)
+	at org.dbflute.task.DfReplaceSchemaTask.createSchema(DfReplaceSchemaTask.java:301)
+	at org.dbflute.task.DfReplaceSchemaTask.executeCoreProcess(DfReplaceSchemaTask.java:246)
+	at org.dbflute.task.DfReplaceSchemaTask.processReplaceSchema(DfReplaceSchemaTask.java:232)
+	at org.dbflute.task.DfReplaceSchemaTask.doExecute(DfReplaceSchemaTask.java:158)
+	at org.dbflute.task.bs.DfAbstractTexenTask$1.callActualExecute(DfAbstractTexenTask.java:129)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.doExecute(DfTaskBasicController.java:192)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.execute(DfTaskBasicController.java:78)
+	at org.dbflute.task.bs.DfAbstractTexenTask.execute(DfAbstractTexenTask.java:151)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:105)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:357)
+	at org.apache.tools.ant.Target.performTasks(Target.java:385)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1329)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1298)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1181)
+	at org.apache.tools.ant.Main.runBuild(Main.java:698)
+	at org.apache.tools.ant.Main.startAnt(Main.java:199)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:257)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:104)
+Caused by: org.postgresql.util.PSQLException: ERROR: "AUTO_INCREMENT"またはその近辺で構文エラー
+  ポジション: 91
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2455)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2155)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:288)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:430)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:303)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:289)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:266)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:262)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.processNonDispatch(DfSqlFileRunnerExecute.java:98)
+	at org.dbflute.logic.replaceschema.process.DfCreateSchemaProcess$DfSqlFileRunnerExecuteCreateSchema.processNonDispatch(DfCreateSchemaProcess.java:460)
+	at org.dbflute.helper.jdbc.sqlfile.DfSqlFileRunnerExecute.execSQL(DfSqlFileRunnerExecute.java:66)
+	... 29 more
+2018-02-19 16:31:06,153 [main] INFO  (DfDataSourceHandler#destroy():120) - ...closeReally()
+2018-02-19 16:31:06,167 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m02s481ms *Abort
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql (PostgreSQL 9.6.6)
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmanuser
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+ {Create Schema}: success=0 failure=1 *break (in 1 files)
+  x replace-schema.sql
+   >> (failed: Look at the exception message)
+    * * * * * *
+    * Failure *
+    * * * * * *
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2018-02-19 16:32:14,152 [main] INFO  (DfReplaceSchemaTask#begin():92) - +------------------------------------------+
+2018-02-19 16:32:14,156 [main] INFO  (DfReplaceSchemaTask#begin():93) - |                                          |
+2018-02-19 16:32:14,157 [main] INFO  (DfReplaceSchemaTask#begin():94) - |              ReplaceSchema               |
+2018-02-19 16:32:14,161 [main] INFO  (DfReplaceSchemaTask#begin():102) - |                                          |
+2018-02-19 16:32:14,162 [main] INFO  (DfReplaceSchemaTask#begin():103) - +------------------------------------------+
+2018-02-19 16:32:14,163 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():401) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2018-02-19 16:32:15,123 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:32:15,123 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:32:15,123 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:32:15,124 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmanuser
+2018-02-19 16:32:15,156 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:32:15,320 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():233) -   product = PostgreSQL 9.6.6
+2018-02-19 16:32:15,320 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():234) -   driver  = PostgreSQL Native Driver PostgreSQL 9.4.1212.jre6 for JDBC 4.0
+2018-02-19 16:32:15,329 [main] INFO  (DfCurrentSchemaConnector#executeCurrentSchemaSql():77) - ...Connecting to the schema
+2018-02-19 16:32:15,329 [main] INFO  (DfCurrentSchemaConnector#executeCurrentSchemaSql():78) - set search_path to public
+2018-02-19 16:32:15,353 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():229) - 
+2018-02-19 16:32:15,355 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():230) - * * * * * * * * * * *
+2018-02-19 16:32:15,356 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():231) - *                   *
+2018-02-19 16:32:15,356 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():232) - * Initialize Schema *
+2018-02-19 16:32:15,357 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():233) - *                   *
+2018-02-19 16:32:15,357 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():234) - * * * * * * * * * * *
+2018-02-19 16:32:15,392 [main] INFO  (DfTableExtractor#doGetTableList():66) - ...Getting tables:
+2018-02-19 16:32:15,392 [main] INFO  (DfTableExtractor#doGetTableList():67) -   schema = {workmandb.public as main}
+2018-02-19 16:32:15,392 [main] INFO  (DfTableExtractor#doGetTableList():68) -   types  = [TABLE, VIEW]
+2018-02-19 16:32:15,442 [main] INFO  (DfCreateSchemaProcess#createSchema():266) - 
+2018-02-19 16:32:15,442 [main] INFO  (DfCreateSchemaProcess#createSchema():267) - * * * * * * * * *
+2018-02-19 16:32:15,442 [main] INFO  (DfCreateSchemaProcess#createSchema():268) - *               *
+2018-02-19 16:32:15,443 [main] INFO  (DfCreateSchemaProcess#createSchema():269) - * Create Schema *
+2018-02-19 16:32:15,443 [main] INFO  (DfCreateSchemaProcess#createSchema():270) - *               *
+2018-02-19 16:32:15,443 [main] INFO  (DfCreateSchemaProcess#createSchema():271) - * * * * * * * * *
+2018-02-19 16:32:15,448 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: replace-schema.sql
+2018-02-19 16:32:15,454 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+-- https://www.postgresql.jp/document/9.4/html/tutorial-table.html
+CREATE TABLE weather (
+    city            varchar(80),
+    temp_lo         int,           -- 最低気温
+    temp_hi         int,           -- 最高気温
+    prcp            real,          -- 降水量
+    date            date
+)
+2018-02-19 16:32:15,470 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=1 failure=0
+2018-02-19 16:32:15,470 [main] INFO  (DfSqlFileFireMan#fire():89) - {Create Schema}: success=1 failure=0 (in 1 files)
+2018-02-19 16:32:15,569 [main] INFO  (DfLoadDataProcess#execute():129) - 
+2018-02-19 16:32:15,569 [main] INFO  (DfLoadDataProcess#execute():130) - * * * * * * * * * * *
+2018-02-19 16:32:15,570 [main] INFO  (DfLoadDataProcess#execute():131) - *                   *
+2018-02-19 16:32:15,570 [main] INFO  (DfLoadDataProcess#execute():132) - * Load Data         *
+2018-02-19 16:32:15,570 [main] INFO  (DfLoadDataProcess#execute():133) - *                   *
+2018-02-19 16:32:15,571 [main] INFO  (DfLoadDataProcess#execute():134) - * * * * * * * * * * *
+2018-02-19 16:32:15,599 [main] INFO  (DfTakeFinallyProcess#takeFinally():229) - 
+2018-02-19 16:32:15,600 [main] INFO  (DfTakeFinallyProcess#takeFinally():230) - * * * * * * * **
+2018-02-19 16:32:15,601 [main] INFO  (DfTakeFinallyProcess#takeFinally():231) - *              *
+2018-02-19 16:32:15,601 [main] INFO  (DfTakeFinallyProcess#takeFinally():232) - * Take Finally *
+2018-02-19 16:32:15,601 [main] INFO  (DfTakeFinallyProcess#takeFinally():233) - *              *
+2018-02-19 16:32:15,601 [main] INFO  (DfTakeFinallyProcess#takeFinally():234) - * * * * * * * **
+2018-02-19 16:32:15,612 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: take-finally.sql
+2018-02-19 16:32:15,615 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=0 failure=0
+2018-02-19 16:32:15,616 [main] INFO  (DfSqlFileFireMan#fire():89) - {Take Finally}: success=0 failure=0 (in 1 files)
+2018-02-19 16:32:15,623 [main] INFO  (DfDataSourceHandler#destroy():120) - ...closeReally()
+2018-02-19 16:32:15,641 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m01s505ms
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql (PostgreSQL 9.6.6)
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmanuser
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+ {Create Schema}: success=1 failure=0 (in 1 files)
+  o replace-schema.sql
+
+ {Load Data}: loaded-files=0
+  - (no data file)
+
+ {Take Finally}: success=0 failure=0 (in 1 files)
+  o take-finally.sql
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2018-02-19 16:35:10,638 [main] INFO  (DfReplaceSchemaTask#begin():92) - +------------------------------------------+
+2018-02-19 16:35:10,648 [main] INFO  (DfReplaceSchemaTask#begin():93) - |                                          |
+2018-02-19 16:35:10,649 [main] INFO  (DfReplaceSchemaTask#begin():94) - |              ReplaceSchema               |
+2018-02-19 16:35:10,656 [main] INFO  (DfReplaceSchemaTask#begin():102) - |                                          |
+2018-02-19 16:35:10,656 [main] INFO  (DfReplaceSchemaTask#begin():103) - +------------------------------------------+
+2018-02-19 16:35:10,657 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():401) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2018-02-19 16:35:13,000 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:35:13,001 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:35:13,001 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:35:13,001 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmanuser
+2018-02-19 16:35:13,025 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:35:13,191 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():233) -   product = PostgreSQL 9.6.6
+2018-02-19 16:35:13,192 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():234) -   driver  = PostgreSQL Native Driver PostgreSQL 9.4.1212.jre6 for JDBC 4.0
+2018-02-19 16:35:13,200 [main] INFO  (DfCurrentSchemaConnector#executeCurrentSchemaSql():77) - ...Connecting to the schema
+2018-02-19 16:35:13,201 [main] INFO  (DfCurrentSchemaConnector#executeCurrentSchemaSql():78) - set search_path to public
+2018-02-19 16:35:13,220 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():229) - 
+2018-02-19 16:35:13,221 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():230) - * * * * * * * * * * *
+2018-02-19 16:35:13,222 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():231) - *                   *
+2018-02-19 16:35:13,222 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():232) - * Initialize Schema *
+2018-02-19 16:35:13,223 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():233) - *                   *
+2018-02-19 16:35:13,223 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():234) - * * * * * * * * * * *
+2018-02-19 16:35:13,245 [main] INFO  (DfTableExtractor#doGetTableList():66) - ...Getting tables:
+2018-02-19 16:35:13,245 [main] INFO  (DfTableExtractor#doGetTableList():67) -   schema = {workmandb.public as main}
+2018-02-19 16:35:13,246 [main] INFO  (DfTableExtractor#doGetTableList():68) -   types  = [TABLE, VIEW]
+2018-02-19 16:35:13,284 [main] INFO  (DfSchemaInitializerJdbc#logReplaceSql():609) - truncate table weather
+2018-02-19 16:35:13,334 [main] INFO  (DfSchemaInitializerJdbc#logReplaceSql():609) - drop table weather
+2018-02-19 16:35:13,351 [main] INFO  (DfCreateSchemaProcess#createSchema():266) - 
+2018-02-19 16:35:13,352 [main] INFO  (DfCreateSchemaProcess#createSchema():267) - * * * * * * * * *
+2018-02-19 16:35:13,352 [main] INFO  (DfCreateSchemaProcess#createSchema():268) - *               *
+2018-02-19 16:35:13,353 [main] INFO  (DfCreateSchemaProcess#createSchema():269) - * Create Schema *
+2018-02-19 16:35:13,353 [main] INFO  (DfCreateSchemaProcess#createSchema():270) - *               *
+2018-02-19 16:35:13,353 [main] INFO  (DfCreateSchemaProcess#createSchema():271) - * * * * * * * * *
+2018-02-19 16:35:13,357 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: replace-schema.sql
+2018-02-19 16:35:13,364 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+-- https://www.postgresql.jp/document/9.4/html/tutorial-table.html
+CREATE TABLE weather (
+    city            varchar(80),
+    temp_lo         int,           -- 最低気温
+    temp_hi         int,           -- 最高気温
+    prcp            real,          -- 降水量
+    date            date
+)
+2018-02-19 16:35:13,381 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=1 failure=0
+2018-02-19 16:35:13,382 [main] INFO  (DfSqlFileFireMan#fire():89) - {Create Schema}: success=1 failure=0 (in 1 files)
+2018-02-19 16:35:13,484 [main] INFO  (DfLoadDataProcess#execute():129) - 
+2018-02-19 16:35:13,484 [main] INFO  (DfLoadDataProcess#execute():130) - * * * * * * * * * * *
+2018-02-19 16:35:13,485 [main] INFO  (DfLoadDataProcess#execute():131) - *                   *
+2018-02-19 16:35:13,485 [main] INFO  (DfLoadDataProcess#execute():132) - * Load Data         *
+2018-02-19 16:35:13,485 [main] INFO  (DfLoadDataProcess#execute():133) - *                   *
+2018-02-19 16:35:13,486 [main] INFO  (DfLoadDataProcess#execute():134) - * * * * * * * * * * *
+2018-02-19 16:35:13,514 [main] INFO  (DfTakeFinallyProcess#takeFinally():229) - 
+2018-02-19 16:35:13,514 [main] INFO  (DfTakeFinallyProcess#takeFinally():230) - * * * * * * * **
+2018-02-19 16:35:13,515 [main] INFO  (DfTakeFinallyProcess#takeFinally():231) - *              *
+2018-02-19 16:35:13,515 [main] INFO  (DfTakeFinallyProcess#takeFinally():232) - * Take Finally *
+2018-02-19 16:35:13,515 [main] INFO  (DfTakeFinallyProcess#takeFinally():233) - *              *
+2018-02-19 16:35:13,515 [main] INFO  (DfTakeFinallyProcess#takeFinally():234) - * * * * * * * **
+2018-02-19 16:35:13,524 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: take-finally.sql
+2018-02-19 16:35:13,527 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=0 failure=0
+2018-02-19 16:35:13,529 [main] INFO  (DfSqlFileFireMan#fire():89) - {Take Finally}: success=0 failure=0 (in 1 files)
+2018-02-19 16:35:13,532 [main] INFO  (DfDataSourceHandler#destroy():120) - ...closeReally()
+2018-02-19 16:35:13,539 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m02s918ms
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql (PostgreSQL 9.6.6)
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmanuser
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+ {Create Schema}: success=1 failure=0 (in 1 files)
+  o replace-schema.sql
+
+ {Load Data}: loaded-files=0
+  - (no data file)
+
+ {Take Finally}: success=0 failure=0 (in 1 files)
+  o take-finally.sql
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2018-02-19 16:39:53,613 [main] INFO  (DfReplaceSchemaTask#begin():92) - +------------------------------------------+
+2018-02-19 16:39:53,618 [main] INFO  (DfReplaceSchemaTask#begin():93) - |                                          |
+2018-02-19 16:39:53,619 [main] INFO  (DfReplaceSchemaTask#begin():94) - |              ReplaceSchema               |
+2018-02-19 16:39:53,625 [main] INFO  (DfReplaceSchemaTask#begin():102) - |                                          |
+2018-02-19 16:39:53,626 [main] INFO  (DfReplaceSchemaTask#begin():103) - +------------------------------------------+
+2018-02-19 16:39:53,628 [main] INFO  (DfReplaceSchemaTask#waitBeforeReps():401) - ...Waiting for your GO SIGN from stdin before ReplaceSchema:
+2018-02-19 16:39:56,895 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:39:56,895 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:39:56,895 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:39:56,896 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmanuser
+2018-02-19 16:39:56,930 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:39:57,088 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():233) -   product = PostgreSQL 9.6.6
+2018-02-19 16:39:57,089 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():234) -   driver  = PostgreSQL Native Driver PostgreSQL 9.4.1212.jre6 for JDBC 4.0
+2018-02-19 16:39:57,098 [main] INFO  (DfCurrentSchemaConnector#executeCurrentSchemaSql():77) - ...Connecting to the schema
+2018-02-19 16:39:57,098 [main] INFO  (DfCurrentSchemaConnector#executeCurrentSchemaSql():78) - set search_path to public
+2018-02-19 16:39:57,116 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():229) - 
+2018-02-19 16:39:57,117 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():230) - * * * * * * * * * * *
+2018-02-19 16:39:57,118 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():231) - *                   *
+2018-02-19 16:39:57,118 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():232) - * Initialize Schema *
+2018-02-19 16:39:57,118 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():233) - *                   *
+2018-02-19 16:39:57,119 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():234) - * * * * * * * * * * *
+2018-02-19 16:39:57,139 [main] INFO  (DfTableExtractor#doGetTableList():66) - ...Getting tables:
+2018-02-19 16:39:57,139 [main] INFO  (DfTableExtractor#doGetTableList():67) -   schema = {workmandb.public as main}
+2018-02-19 16:39:57,140 [main] INFO  (DfTableExtractor#doGetTableList():68) -   types  = [TABLE, VIEW]
+2018-02-19 16:39:57,171 [main] INFO  (DfSchemaInitializerJdbc#logReplaceSql():609) - truncate table weather
+2018-02-19 16:39:57,214 [main] INFO  (DfSchemaInitializerJdbc#logReplaceSql():609) - drop table weather
+2018-02-19 16:39:57,229 [main] INFO  (DfCreateSchemaProcess#createSchema():266) - 
+2018-02-19 16:39:57,230 [main] INFO  (DfCreateSchemaProcess#createSchema():267) - * * * * * * * * *
+2018-02-19 16:39:57,230 [main] INFO  (DfCreateSchemaProcess#createSchema():268) - *               *
+2018-02-19 16:39:57,231 [main] INFO  (DfCreateSchemaProcess#createSchema():269) - * Create Schema *
+2018-02-19 16:39:57,231 [main] INFO  (DfCreateSchemaProcess#createSchema():270) - *               *
+2018-02-19 16:39:57,231 [main] INFO  (DfCreateSchemaProcess#createSchema():271) - * * * * * * * * *
+2018-02-19 16:39:57,235 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: replace-schema.sql
+2018-02-19 16:39:57,239 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+-- https://www.postgresql.jp/document/9.4/html/tutorial-table.html
+CREATE TABLE weather (
+    city            varchar(80),
+    temp_lo         int,           -- 最低気温
+    temp_hi         int,           -- 最高気温
+    prcp            real,          -- 降水量
+    date            date
+)
+2018-02-19 16:39:57,256 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=1 failure=0
+2018-02-19 16:39:57,257 [main] INFO  (DfSqlFileFireMan#fire():89) - {Create Schema}: success=1 failure=0 (in 1 files)
+2018-02-19 16:39:57,355 [main] INFO  (DfLoadDataProcess#execute():129) - 
+2018-02-19 16:39:57,356 [main] INFO  (DfLoadDataProcess#execute():130) - * * * * * * * * * * *
+2018-02-19 16:39:57,356 [main] INFO  (DfLoadDataProcess#execute():131) - *                   *
+2018-02-19 16:39:57,356 [main] INFO  (DfLoadDataProcess#execute():132) - * Load Data         *
+2018-02-19 16:39:57,357 [main] INFO  (DfLoadDataProcess#execute():133) - *                   *
+2018-02-19 16:39:57,357 [main] INFO  (DfLoadDataProcess#execute():134) - * * * * * * * * * * *
+2018-02-19 16:39:57,390 [main] INFO  (DfTakeFinallyProcess#takeFinally():229) - 
+2018-02-19 16:39:57,390 [main] INFO  (DfTakeFinallyProcess#takeFinally():230) - * * * * * * * **
+2018-02-19 16:39:57,391 [main] INFO  (DfTakeFinallyProcess#takeFinally():231) - *              *
+2018-02-19 16:39:57,391 [main] INFO  (DfTakeFinallyProcess#takeFinally():232) - * Take Finally *
+2018-02-19 16:39:57,392 [main] INFO  (DfTakeFinallyProcess#takeFinally():233) - *              *
+2018-02-19 16:39:57,393 [main] INFO  (DfTakeFinallyProcess#takeFinally():234) - * * * * * * * **
+2018-02-19 16:39:57,407 [main] INFO  (DfSqlFileFireMan#fire():64) - ...Firing: take-finally.sql
+2018-02-19 16:39:57,409 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=0 failure=0
+2018-02-19 16:39:57,409 [main] INFO  (DfSqlFileFireMan#fire():89) - {Take Finally}: success=0 failure=0 (in 1 files)
+2018-02-19 16:39:57,411 [main] INFO  (DfDataSourceHandler#destroy():120) - ...closeReally()
+2018-02-19 16:39:57,422 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m03s830ms
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql (PostgreSQL 9.6.6)
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmanuser
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+ {Create Schema}: success=1 failure=0 (in 1 files)
+  o replace-schema.sql
+
+ {Load Data}: loaded-files=0
+  - (no data file)
+
+ {Take Finally}: success=0 failure=0 (in 1 files)
+  o take-finally.sql
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+2018-02-19 16:41:40,277 [main] INFO  (TorqueDataModelTask#begin():110) - +------------------------------------------+
+2018-02-19 16:41:40,283 [main] INFO  (TorqueDataModelTask#begin():111) - |                                          |
+2018-02-19 16:41:40,284 [main] INFO  (TorqueDataModelTask#begin():112) - |                 Generate                 |
+2018-02-19 16:41:40,284 [main] INFO  (TorqueDataModelTask#begin():113) - |                                          |
+2018-02-19 16:41:40,285 [main] INFO  (TorqueDataModelTask#begin():114) - +------------------------------------------+
+2018-02-19 16:41:40,320 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:41:40,325 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:41:40,325 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:41:40,326 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmanuser
+2018-02-19 16:41:40,352 [main] INFO  (TorqueDataModelTask#setupControlTemplate():166) - 
+2018-02-19 16:41:40,352 [main] INFO  (TorqueDataModelTask#setupControlTemplate():167) - ...Using Java control: om/ControlGenerateJava.vm
+2018-02-19 16:41:40,408 [main] ERROR (DfDBFluteTaskUtil#logException():150) - Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to execute DBFlute Task 'Generate'.
+
+[Advice]
+Check the exception messages and the stack traces.
+* * * * * * * * * */
+java.lang.IllegalStateException: Generation failed: control=om/ControlGenerateJava.vm
+	at org.dbflute.task.bs.DfAbstractTexenTask.fireVelocityProcess(DfAbstractTexenTask.java:268)
+	at org.apache.torque.task.TorqueDataModelTask.doExecute(TorqueDataModelTask.java:141)
+	at org.dbflute.task.bs.DfAbstractTexenTask$1.callActualExecute(DfAbstractTexenTask.java:129)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.doExecute(DfTaskBasicController.java:192)
+	at org.dbflute.task.bs.assistant.DfTaskBasicController.execute(DfTaskBasicController.java:78)
+	at org.dbflute.task.bs.DfAbstractTexenTask.execute(DfAbstractTexenTask.java:151)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:105)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:357)
+	at org.apache.tools.ant.Target.performTasks(Target.java:385)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1329)
+	at org.apache.tools.ant.helper.SingleCheckExecutor.executeTargets(SingleCheckExecutor.java:38)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1181)
+	at org.apache.tools.ant.taskdefs.Ant.execute(Ant.java:416)
+	at org.apache.tools.ant.taskdefs.CallTarget.execute(CallTarget.java:105)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:105)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:357)
+	at org.apache.tools.ant.Target.performTasks(Target.java:385)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1329)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1298)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1181)
+	at org.apache.tools.ant.Main.runBuild(Main.java:698)
+	at org.apache.tools.ant.Main.startAnt(Main.java:199)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:257)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:104)
+Caused by: java.lang.IllegalStateException: Failed to initialize control context: templatePath=/Users/takuma.nagai/.ghq/github.com/nagaita/workman/workmanrdb/mydbflute/dbflute-1.1.6/templates useClasspath=false
+	at org.dbflute.task.bs.DfAbstractTexenTask.setupControlContext(DfAbstractTexenTask.java:322)
+	at org.dbflute.task.bs.DfAbstractTexenTask.fireVelocityProcess(DfAbstractTexenTask.java:252)
+	... 34 more
+Caused by: java.lang.IllegalStateException: Failed to read the SchemaXML: ./schema/project-schema-workmandb.xml
+	at org.dbflute.logic.jdbc.schemaxml.DfSchemaXmlReader.read(DfSchemaXmlReader.java:166)
+	at org.dbflute.task.bs.DfAbstractDbMetaTexenTask.initializeSchemaData(DfAbstractDbMetaTexenTask.java:58)
+	at org.dbflute.task.bs.DfAbstractDbMetaTexenTask.initControlContext(DfAbstractDbMetaTexenTask.java:51)
+	at org.dbflute.task.bs.DfAbstractTexenTask.setupControlContext(DfAbstractTexenTask.java:318)
+	... 35 more
+Caused by: java.io.FileNotFoundException: ./schema/project-schema-workmandb.xml (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at org.apache.torque.engine.database.transform.XmlToAppData.parseFile(XmlToAppData.java:247)
+	at org.dbflute.logic.jdbc.schemaxml.DfSchemaXmlReader.read(DfSchemaXmlReader.java:163)
+	... 38 more
+2018-02-19 16:41:40,435 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s183ms *Abort
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmanuser
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+_/_/_/_/_/_/_/_/_/_/ {Generate}
+2018-02-19 16:42:06,989 [main] INFO  (TorqueJDBCTransformTask#begin():104) - +------------------------------------------+
+2018-02-19 16:42:06,994 [main] INFO  (TorqueJDBCTransformTask#begin():105) - |                                          |
+2018-02-19 16:42:06,995 [main] INFO  (TorqueJDBCTransformTask#begin():106) - |                   JDBC                   |
+2018-02-19 16:42:06,996 [main] INFO  (TorqueJDBCTransformTask#begin():107) - |                                          |
+2018-02-19 16:42:06,996 [main] INFO  (TorqueJDBCTransformTask#begin():108) - +------------------------------------------+
+2018-02-19 16:42:07,029 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:42:07,030 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:42:07,030 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:42:07,031 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmanuser
+2018-02-19 16:42:07,079 [main] INFO  (DfSchemaXmlSerializer#serialize():286) - 
+2018-02-19 16:42:07,080 [main] INFO  (DfSchemaXmlSerializer#serialize():287) - ...Starting to process JDBC to SchemaXML
+2018-02-19 16:42:07,081 [main] INFO  (DfSchemaXmlSerializer#doLoadPreviousSchema():1532) - ...Loading previous schema (schema diff process)
+2018-02-19 16:42:07,082 [main] INFO  (DfSchemaXmlSerializer#doLoadPreviousSchema():1535) -  -> no previous (first time)
+2018-02-19 16:42:07,099 [main] INFO  (DfSchemaXmlSerializer#generateXML():360) - ...Getting DB connection
+2018-02-19 16:42:07,124 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2018-02-19 16:42:07,280 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():233) -   product = PostgreSQL 9.6.6
+2018-02-19 16:42:07,282 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():234) -   driver  = PostgreSQL Native Driver PostgreSQL 9.4.1212.jre6 for JDBC 4.0
+2018-02-19 16:42:07,290 [main] INFO  (DfCurrentSchemaConnector#executeCurrentSchemaSql():77) - ...Connecting to the schema
+2018-02-19 16:42:07,291 [main] INFO  (DfCurrentSchemaConnector#executeCurrentSchemaSql():78) - set search_path to public
+2018-02-19 16:42:07,293 [main] INFO  (DfSchemaXmlSerializer#generateXML():363) - ...Getting DB meta data
+2018-02-19 16:42:07,297 [main] INFO  (DfTableExtractor#doGetTableList():66) - ...Getting tables:
+2018-02-19 16:42:07,298 [main] INFO  (DfTableExtractor#doGetTableList():67) -   schema = {workmandb.public as main}
+2018-02-19 16:42:07,298 [main] INFO  (DfTableExtractor#doGetTableList():68) -   types  = [TABLE, VIEW]
+2018-02-19 16:42:07,336 [main] INFO  (DfSchemaXmlSerializer#processTable():420) - 
+2018-02-19 16:42:07,336 [main] INFO  (DfSchemaXmlSerializer#processTable():421) - $ /= = = = = = = = = = = = = = = = = = = = = = = = = =
+2018-02-19 16:42:07,336 [main] INFO  (DfSchemaXmlSerializer#processTable():422) - $ [Table List]
+2018-02-19 16:42:07,337 [main] INFO  (DfSchemaXmlSerializer#doProcessTable():502) - $ workmandb.public.weather(TABLE)
+2018-02-19 16:42:07,413 [main] INFO  (DfSchemaXmlSerializer#processTable():434) - $ 
+2018-02-19 16:42:07,413 [main] INFO  (DfSchemaXmlSerializer#processTable():435) - $ [Table Count]
+2018-02-19 16:42:07,413 [main] INFO  (DfSchemaXmlSerializer#processTable():436) - $ 1
+2018-02-19 16:42:07,413 [main] INFO  (DfSchemaXmlSerializer#processTable():437) - $ = = = = = = = = = =/
+2018-02-19 16:42:07,414 [main] INFO  (DfSchemaXmlSerializer#processTable():438) - 
+2018-02-19 16:42:07,415 [main] INFO  (DfSchemaXmlSerializer#processSequence():805) - ...Getting sequences
+2018-02-19 16:42:07,419 [main] INFO  (DfSequenceExtractorPostgreSQL#doGetSequenceMap():53) - ...Loading sequence informations
+2018-02-19 16:42:07,422 [main] INFO  (DfSequenceExtractorBase#selectStringList():75) - select * from information_schema.sequences where sequence_schema in ('public')
+2018-02-19 16:42:07,426 [main] INFO  (DfSequenceExtractorPostgreSQL#doGetSequenceMap():99) - 
+[SEQUENCE]
+2018-02-19 16:42:07,426 [main] INFO  (DfSchemaXmlSerializer#processSequence():810) - ...Processing sequences: 0
+2018-02-19 16:42:07,429 [main] INFO  (DfSchemaXmlSerializer#serialize():301) - ...Serializing XML:
+2018-02-19 16:42:07,429 [main] INFO  (DfSchemaXmlSerializer#serialize():302) -   filePath = ./schema/project-schema-workmandb.xml
+2018-02-19 16:42:07,430 [main] INFO  (DfSchemaXmlSerializer#serialize():303) -   encoding = UTF-8
+2018-02-19 16:42:07,446 [main] INFO  (DfDataSourceHandler#destroy():120) - ...closeReally()
+2018-02-19 16:42:07,460 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s474ms
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql (PostgreSQL 9.6.6)
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmanuser
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+_/_/_/_/_/_/_/_/_/_/ {JDBC}
+2018-02-19 16:42:26,413 [main] INFO  (TorqueDocumentationTask#begin():181) - +------------------------------------------+
+2018-02-19 16:42:26,422 [main] INFO  (TorqueDocumentationTask#begin():182) - |                                          |
+2018-02-19 16:42:26,422 [main] INFO  (TorqueDocumentationTask#begin():183) - |                   Doc                    |
+2018-02-19 16:42:26,423 [main] INFO  (TorqueDocumentationTask#begin():191) - |                                          |
+2018-02-19 16:42:26,423 [main] INFO  (TorqueDocumentationTask#begin():192) - +------------------------------------------+
+2018-02-19 16:42:26,454 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:42:26,454 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:42:26,454 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:42:26,455 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmanuser
+2018-02-19 16:42:26,457 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():253) - 
+2018-02-19 16:42:26,458 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():254) - * * * * * * * * * * *
+2018-02-19 16:42:26,458 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():255) - *                   *
+2018-02-19 16:42:26,460 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():256) - *    Schema HTML    *
+2018-02-19 16:42:26,460 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():257) - *                   *
+2018-02-19 16:42:26,460 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():258) - * * * * * * * * * * *
+2018-02-19 16:42:26,621 [main] INFO  (DTDResolver#resolveEntity():195) - ...Resolving XML by database.dtd in same package
+2018-02-19 16:42:26,694 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():253) - generator.parse("doc/ControlDocument.vm", ctx);
+2018-02-19 16:42:26,865 [main] INFO  (Database#doEnableDocumentOutputDirectory():1187) - ...Setting up documentOutputDirectory: ./output/doc
+2018-02-19 16:42:26,877 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2018-02-19 16:42:26,877 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2018-02-19 16:42:26,879 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2018-02-19 16:42:26,881 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2018-02-19 16:42:26,881 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2018-02-19 16:42:26,882 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2018-02-19 16:42:26,885 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - /=======================================
+2018-02-19 16:42:26,885 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():69) - ...Initializing additional foreign keys.
+2018-02-19 16:42:26,888 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():88) - ==========/
+2018-02-19 16:42:26,899 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():228) - ...Loading schema history
+2018-02-19 16:42:26,899 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():234) -  -> no history
+2018-02-19 16:42:27,096 [main] INFO  (DfRefreshMan#resolveProjectAutoDetect():105) - *Cannot auto-detect your refresh Eclipse proejct.
+2018-02-19 16:42:27,099 [main] INFO  (DfRefreshResourceProcess#show():299) - /===========================================================================
+2018-02-19 16:42:27,100 [main] INFO  (DfRefreshResourceProcess#show():299) - ...Refreshing [$$AutoDetect$$] by http://localhost:8386/
+2018-02-19 16:42:27,119 [main] INFO  (DfRefreshResourceProcess#show():299) - ...Retrying refreshing by default secondary URL http://localhost:8387/
+2018-02-19 16:42:27,121 [main] INFO  (DfRefreshResourceProcess#show():299) - Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to refresh the resources.
+
+[Project List]
+[$$AutoDetect$$]
+
+[Request URL]
+http://localhost:8386/
+
+[IOExpception]
+ConnectException
+Connection refused (Connection refused)
+* * * * * * * * * */
+2018-02-19 16:42:27,125 [main] INFO  (DfRefreshResourceProcess#show():299) - ==========/
+2018-02-19 16:42:27,128 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s731ms
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmanuser
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+_/_/_/_/_/_/_/_/_/_/ {Doc}
+2018-02-19 16:42:34,213 [main] INFO  (TorqueDataModelTask#begin():110) - +------------------------------------------+
+2018-02-19 16:42:34,225 [main] INFO  (TorqueDataModelTask#begin():111) - |                                          |
+2018-02-19 16:42:34,225 [main] INFO  (TorqueDataModelTask#begin():112) - |                 Generate                 |
+2018-02-19 16:42:34,226 [main] INFO  (TorqueDataModelTask#begin():113) - |                                          |
+2018-02-19 16:42:34,226 [main] INFO  (TorqueDataModelTask#begin():114) - +------------------------------------------+
+2018-02-19 16:42:34,246 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2018-02-19 16:42:34,247 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = org.postgresql.Driver
+2018-02-19 16:42:34,247 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:postgresql://localhost:5432/workmandb
+2018-02-19 16:42:34,247 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = workmanuser
+2018-02-19 16:42:34,271 [main] INFO  (TorqueDataModelTask#setupControlTemplate():166) - 
+2018-02-19 16:42:34,272 [main] INFO  (TorqueDataModelTask#setupControlTemplate():167) - ...Using Java control: om/ControlGenerateJava.vm
+2018-02-19 16:42:34,332 [main] INFO  (DTDResolver#resolveEntity():195) - ...Resolving XML by database.dtd in same package
+2018-02-19 16:42:34,393 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():253) - generator.parse("om/ControlGenerateJava.vm", ctx);
+2018-02-19 16:42:34,633 [main] INFO  (Database#doEnableGenerateOutputDirectory():1155) - ...Setting up generateOutputDirectory: ../src/main/java
+2018-02-19 16:42:34,637 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2018-02-19 16:42:34,638 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2018-02-19 16:42:34,641 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2018-02-19 16:42:34,643 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2018-02-19 16:42:34,643 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2018-02-19 16:42:34,645 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2018-02-19 16:42:34,648 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - /=======================================
+2018-02-19 16:42:34,649 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():69) - ...Initializing additional foreign keys.
+2018-02-19 16:42:34,651 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():88) - ==========/
+2018-02-19 16:42:34,665 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():58) - /=============================
+2018-02-19 16:42:34,665 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():59) - ...Initializing include query.
+2018-02-19 16:42:34,665 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():81) - String
+2018-02-19 16:42:34,666 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():81) - Number
+2018-02-19 16:42:34,666 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():81) - Date
+2018-02-19 16:42:34,666 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():86) -   NotEqual -> []
+2018-02-19 16:42:34,667 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():86) -   InScope -> []
+2018-02-19 16:42:34,667 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():86) -   NotInScope -> []
+2018-02-19 16:42:34,668 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():81) - OrderBy
+2018-02-19 16:42:34,669 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():61) - ========/
+2018-02-19 16:42:34,687 [main] INFO  (Database#info():2748) - public void parseAllCommon() {
+2018-02-19 16:42:34,691 [main] INFO  (Database#info():2748) -     parse('DBCurrent');
+2018-02-19 16:42:34,701 [main] INFO  (Database#info():2748) -     parse('DBFluteConfig');
+2018-02-19 16:42:34,722 [main] INFO  (Database#info():2748) -     parse('DBFluteInitializer');
+2018-02-19 16:42:34,730 [main] INFO  (Database#info():2748) -     parse('DBMetaInstanceHandler');
+2018-02-19 16:42:34,752 [main] INFO  (Database#info():2748) -     parse('EntityDefinedCommonColumn');
+2018-02-19 16:42:34,757 [main] INFO  (Database#info():2748) -     parse('ImplementedBehaviorSelector');
+2018-02-19 16:42:34,779 [main] INFO  (Database#info():2748) -     parse('ImplementedCommonColumnAutoSetupper');
+2018-02-19 16:42:34,810 [main] INFO  (Database#info():2748) -     parse('ImplementedInvokerAssistant');
+2018-02-19 16:42:34,819 [main] INFO  (Database#info():2748) -     parse('ImplementedSqlClauseCreator');
+2018-02-19 16:42:34,822 [main] INFO  (Database#info():2748) - }
+2018-02-19 16:42:34,823 [main] INFO  (Database#info():2748) - public void parseContainerConfig() {
+2018-02-19 16:42:34,824 [main] INFO  (Database#info():2748) -     parse('io/nagaita/workman/dbflute/allcommon/DBFluteBeansJavaConfig.java')
+2018-02-19 16:42:34,844 [main] INFO  (Database#info():2748) - }
+2018-02-19 16:42:34,879 [main] INFO  (DfOldClassHandler#info():1045) - public void deleteOldTableClass() {
+2018-02-19 16:42:34,905 [main] INFO  (DfOldClassHandler#info():1045) - }
+2018-02-19 16:42:34,906 [main] INFO  (Database#info():2748) - public void parseTableClass() {
+2018-02-19 16:42:34,907 [main] INFO  (Database#info():2748) -     parse('weather');
+2018-02-19 16:42:35,221 [main] INFO  (Database#info():2748) - }
+2018-02-19 16:42:35,222 [main] INFO  (Database#info():2748) -  
+2018-02-19 16:42:35,257 [main] INFO  (DfRefreshMan#resolveProjectAutoDetect():105) - *Cannot auto-detect your refresh Eclipse proejct.
+2018-02-19 16:42:35,262 [main] INFO  (DfRefreshResourceProcess#show():299) - /===========================================================================
+2018-02-19 16:42:35,271 [main] INFO  (DfRefreshResourceProcess#show():299) - ...Refreshing [$$AutoDetect$$] by http://localhost:8386/
+2018-02-19 16:42:35,389 [main] INFO  (DfRefreshResourceProcess#show():299) - ...Retrying refreshing by default secondary URL http://localhost:8387/
+2018-02-19 16:42:35,390 [main] INFO  (DfRefreshResourceProcess#show():299) - Look! Read the message below.
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Failed to refresh the resources.
+
+[Project List]
+[$$AutoDetect$$]
+
+[Request URL]
+http://localhost:8386/
+
+[IOExpception]
+ConnectException
+Connection refused (Connection refused)
+* * * * * * * * * */
+2018-02-19 16:42:35,391 [main] INFO  (DfRefreshResourceProcess#show():299) - ==========/
+2018-02-19 16:42:35,395 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m01s203ms
+
+  DBFLUTE_CLIENT: {workmandb}
+    database  = postgresql
+    language  = java
+    container = spring
+    package   = io.nagaita.workman.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = org.postgresql.Driver
+    url    = jdbc:postgresql://localhost:5432/workmandb
+    schema = {workmandb.public as main}
+    user   = workmanuser
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+_/_/_/_/_/_/_/_/_/_/ {Generate}
