@@ -1,0 +1,130 @@
+map:{
+    ; 2018/02/20 08:28:16 = map:{
+        ; diffDate = 2018/02/20 08:28:16
+        ; tableDiff = map:{
+            ; task = map:{
+                ; tableName = task
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; id = map:{
+                        ; columnName = id
+                        ; diffType = ADD
+                    }
+                    ; task_id = map:{
+                        ; columnName = task_id
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; task_pkey = map:{
+                        ; constraintName = task_pkey
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = id
+                            ; previous = task_id
+                        }
+                    }
+                }
+            }
+        }
+        ; sequenceDiff = map:{
+            ; workmandb.public.task_id_seq = map:{
+                ; sequenceName = workmandb.public.task_id_seq
+                ; diffType = ADD
+            }
+            ; workmandb.public.task_task_id_seq = map:{
+                ; sequenceName = workmandb.public.task_task_id_seq
+                ; diffType = DELETE
+            }
+        }
+    }
+    ; 2018/02/20 07:47:22 = map:{
+        ; diffDate = 2018/02/20 07:47:22
+        ; tableDiff = map:{
+            ; task = map:{
+                ; tableName = task
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; created_at = map:{
+                        ; columnName = created_at
+                        ; diffType = CHANGE
+                        ; notNullDiff = map:{
+                            ; next = true
+                            ; previous = false
+                        }
+                    }
+                    ; created_by = map:{
+                        ; columnName = created_by
+                        ; diffType = CHANGE
+                        ; notNullDiff = map:{
+                            ; next = true
+                            ; previous = false
+                        }
+                    }
+                    ; updated_at = map:{
+                        ; columnName = updated_at
+                        ; diffType = CHANGE
+                        ; notNullDiff = map:{
+                            ; next = true
+                            ; previous = false
+                        }
+                    }
+                    ; updated_by = map:{
+                        ; columnName = updated_by
+                        ; diffType = CHANGE
+                        ; notNullDiff = map:{
+                            ; next = true
+                            ; previous = false
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ; 2018/02/20 07:43:16 = map:{
+        ; diffDate = 2018/02/20 07:43:16
+        ; tableDiff = map:{
+            ; task = map:{
+                ; tableName = task
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; created_at = map:{
+                        ; columnName = created_at
+                        ; diffType = ADD
+                    }
+                    ; created_by = map:{
+                        ; columnName = created_by
+                        ; diffType = ADD
+                    }
+                    ; updated_at = map:{
+                        ; columnName = updated_at
+                        ; diffType = ADD
+                    }
+                    ; updated_by = map:{
+                        ; columnName = updated_by
+                        ; diffType = ADD
+                    }
+                }
+            }
+        }
+    }
+    ; 2018/02/20 07:36:40 = map:{
+        ; diffDate = 2018/02/20 07:36:40
+        ; tableDiff = map:{
+            ; task = map:{
+                ; tableName = task
+                ; diffType = ADD
+            }
+            ; weather = map:{
+                ; tableName = weather
+                ; diffType = DELETE
+            }
+        }
+        ; sequenceDiff = map:{
+            ; workmandb.public.task_task_id_seq = map:{
+                ; sequenceName = workmandb.public.task_task_id_seq
+                ; diffType = ADD
+            }
+        }
+    }
+}

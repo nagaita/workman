@@ -20,20 +20,20 @@ import io.nagaita.workman.dbflute.cbean.*;
 import io.nagaita.workman.dbflute.cbean.cq.*;
 
 /**
- * The base condition-bean of weather.
+ * The base condition-bean of task.
  * @author DBFlute(AutoGenerator)
  */
-public class BsWeatherCB extends AbstractConditionBean {
+public class BsTaskCB extends AbstractConditionBean {
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected WeatherCQ _conditionQuery;
+    protected TaskCQ _conditionQuery;
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public BsWeatherCB() {
+    public BsTaskCB() {
         if (DBFluteConfig.getInstance().isPagingCountLater()) {
             enablePagingCountLater();
         }
@@ -72,20 +72,32 @@ public class BsWeatherCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "weather";
+        return "task";
     }
 
     // ===================================================================================
     //                                                                 PrimaryKey Handling
     //                                                                 ===================
+    /**
+     * Accept the query condition of primary key as equal.
+     * @param id : PK, ID, NotNull, bigserial(19). (NotNull)
+     * @return this. (NotNull)
+     */
+    public TaskCB acceptPK(Long id) {
+        assertObjectNotNull("id", id);
+        BsTaskCB cb = this;
+        cb.query().setId_Equal(id);
+        return (TaskCB)this;
+    }
+
     public ConditionBean addOrderBy_PK_Asc() {
-        String msg = "The table has no primary-keys: " + asTableDbName();
-        throw new UnsupportedOperationException(msg);
+        query().addOrderBy_Id_Asc();
+        return this;
     }
 
     public ConditionBean addOrderBy_PK_Desc() {
-        String msg = "The table has no primary-keys: " + asTableDbName();
-        throw new UnsupportedOperationException(msg);
+        query().addOrderBy_Id_Desc();
+        return this;
     }
 
     // ===================================================================================
@@ -148,34 +160,34 @@ public class BsWeatherCB extends AbstractConditionBean {
      * </pre>
      * @return The instance of condition-query for base-point table to set up query. (NotNull)
      */
-    public WeatherCQ query() {
+    public TaskCQ query() {
         assertQueryPurpose(); // assert only when user-public query
         return doGetConditionQuery();
     }
 
-    public WeatherCQ xdfgetConditionQuery() { // public for parameter comment and internal
+    public TaskCQ xdfgetConditionQuery() { // public for parameter comment and internal
         return doGetConditionQuery();
     }
 
-    protected WeatherCQ doGetConditionQuery() {
+    protected TaskCQ doGetConditionQuery() {
         if (_conditionQuery == null) {
             _conditionQuery = createLocalCQ();
         }
         return _conditionQuery;
     }
 
-    protected WeatherCQ createLocalCQ() {
+    protected TaskCQ createLocalCQ() {
         return xcreateCQ(null, getSqlClause(), getSqlClause().getBasePointAliasName(), 0);
     }
 
-    protected WeatherCQ xcreateCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
-        WeatherCQ cq = xnewCQ(childQuery, sqlClause, aliasName, nestLevel);
+    protected TaskCQ xcreateCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
+        TaskCQ cq = xnewCQ(childQuery, sqlClause, aliasName, nestLevel);
         cq.xsetBaseCB(this);
         return cq;
     }
 
-    protected WeatherCQ xnewCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
-        return new WeatherCQ(childQuery, sqlClause, aliasName, nestLevel);
+    protected TaskCQ xnewCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
+        return new TaskCQ(childQuery, sqlClause, aliasName, nestLevel);
     }
 
     /**
@@ -199,10 +211,10 @@ public class BsWeatherCB extends AbstractConditionBean {
      * </pre>
      * @param unionCBLambda The callback for query of 'union'. (NotNull)
      */
-    public void union(UnionQuery<WeatherCB> unionCBLambda) {
-        final WeatherCB cb = new WeatherCB(); cb.xsetupForUnion(this); xsyncUQ(cb);
+    public void union(UnionQuery<TaskCB> unionCBLambda) {
+        final TaskCB cb = new TaskCB(); cb.xsetupForUnion(this); xsyncUQ(cb);
         try { lock(); unionCBLambda.query(cb); } finally { unlock(); } xsaveUCB(cb);
-        final WeatherCQ cq = cb.query(); query().xsetUnionQuery(cq);
+        final TaskCQ cq = cb.query(); query().xsetUnionQuery(cq);
     }
 
     /**
@@ -216,10 +228,10 @@ public class BsWeatherCB extends AbstractConditionBean {
      * </pre>
      * @param unionCBLambda The callback for query of 'union all'. (NotNull)
      */
-    public void unionAll(UnionQuery<WeatherCB> unionCBLambda) {
-        final WeatherCB cb = new WeatherCB(); cb.xsetupForUnion(this); xsyncUQ(cb);
+    public void unionAll(UnionQuery<TaskCB> unionCBLambda) {
+        final TaskCB cb = new TaskCB(); cb.xsetupForUnion(this); xsyncUQ(cb);
         try { lock(); unionCBLambda.query(cb); } finally { unlock(); } xsaveUCB(cb);
-        final WeatherCQ cq = cb.query(); query().xsetUnionAllQuery(cq);
+        final TaskCQ cq = cb.query(); query().xsetUnionAllQuery(cq);
     }
 
     // ===================================================================================
@@ -265,43 +277,68 @@ public class BsWeatherCB extends AbstractConditionBean {
         return _specification != null && _specification.hasSpecifiedColumn();
     }
 
-    public static class HpSpecification extends HpAbstractSpecification<WeatherCQ> {
-        public HpSpecification(ConditionBean baseCB, HpSpQyCall<WeatherCQ> qyCall
+    public static class HpSpecification extends HpAbstractSpecification<TaskCQ> {
+        public HpSpecification(ConditionBean baseCB, HpSpQyCall<TaskCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
         { super(baseCB, qyCall, purpose, dbmetaProvider, sdrFuncFactory); }
         /**
-         * city: {varchar(80)}
+         * id: {PK, ID, NotNull, bigserial(19)}
          * @return The information object of specified column. (NotNull)
          */
-        public SpecifiedColumn columnCity() { return doColumn("city"); }
+        public SpecifiedColumn columnId() { return doColumn("id"); }
         /**
-         * temp_lo: {int4(10)}
+         * title: {NotNull, varchar(256)}
          * @return The information object of specified column. (NotNull)
          */
-        public SpecifiedColumn columnTempLo() { return doColumn("temp_lo"); }
+        public SpecifiedColumn columnTitle() { return doColumn("title"); }
         /**
-         * temp_hi: {int4(10)}
+         * deadline: {timestamp(29, 6)}
          * @return The information object of specified column. (NotNull)
          */
-        public SpecifiedColumn columnTempHi() { return doColumn("temp_hi"); }
+        public SpecifiedColumn columnDeadline() { return doColumn("deadline"); }
         /**
-         * prcp: {float4(8, 8)}
+         * scheduled: {timestamp(29, 6)}
          * @return The information object of specified column. (NotNull)
          */
-        public SpecifiedColumn columnPrcp() { return doColumn("prcp"); }
+        public SpecifiedColumn columnScheduled() { return doColumn("scheduled"); }
         /**
-         * date: {date(13)}
+         * created_at: {NotNull, timestamp(29, 6)}
          * @return The information object of specified column. (NotNull)
          */
-        public SpecifiedColumn columnDate() { return doColumn("date"); }
+        public SpecifiedColumn columnCreatedAt() { return doColumn("created_at"); }
+        /**
+         * created_by: {NotNull, varchar(256)}
+         * @return The information object of specified column. (NotNull)
+         */
+        public SpecifiedColumn columnCreatedBy() { return doColumn("created_by"); }
+        /**
+         * updated_at: {NotNull, timestamp(29, 6)}
+         * @return The information object of specified column. (NotNull)
+         */
+        public SpecifiedColumn columnUpdatedAt() { return doColumn("updated_at"); }
+        /**
+         * updated_by: {NotNull, varchar(256)}
+         * @return The information object of specified column. (NotNull)
+         */
+        public SpecifiedColumn columnUpdatedBy() { return doColumn("updated_by"); }
         public void everyColumn() { doEveryColumn(); }
         public void exceptRecordMetaColumn() { doExceptRecordMetaColumn(); }
         @Override
         protected void doSpecifyRequiredColumn() {
+            columnId(); // PK
         }
         @Override
-        protected String getTableDbName() { return "weather"; }
+        protected String getTableDbName() { return "task"; }
+        /**
+         * Prepare for (Specify)MyselfDerived (SubQuery).
+         * @return The object to set up a function for myself table. (NotNull)
+         */
+        public HpSDRFunction<TaskCB, TaskCQ> myselfDerived() {
+            assertDerived("myselfDerived"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TaskCB> sq, TaskCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
+        }
     }
 
     // ===================================================================================
@@ -312,9 +349,9 @@ public class BsWeatherCB extends AbstractConditionBean {
      * This is very specialty so you can get the frontier spirit. Bon voyage!
      * @return The condition-bean for dream cruise, which is linked to main condition-bean.
      */
-    public WeatherCB dreamCruiseCB() {
-        WeatherCB cb = new WeatherCB();
-        cb.xsetupForDreamCruise((WeatherCB) this);
+    public TaskCB dreamCruiseCB() {
+        TaskCB cb = new TaskCB();
+        cb.xsetupForDreamCruise((TaskCB) this);
         return cb;
     }
 
@@ -339,15 +376,15 @@ public class BsWeatherCB extends AbstractConditionBean {
      * @param colCBLambda The callback for specify-query of left column. (NotNull)
      * @return The object for setting up operand and right column. (NotNull)
      */
-    public HpColQyOperand<WeatherCB> columnQuery(final SpecifyQuery<WeatherCB> colCBLambda) {
+    public HpColQyOperand<TaskCB> columnQuery(final SpecifyQuery<TaskCB> colCBLambda) {
         return xcreateColQyOperand((rightSp, operand) -> {
             return xcolqy(xcreateColumnQueryCB(), xcreateColumnQueryCB(), colCBLambda, rightSp, operand);
         });
     }
 
-    protected WeatherCB xcreateColumnQueryCB() {
-        WeatherCB cb = new WeatherCB();
-        cb.xsetupForColumnQuery((WeatherCB)this);
+    protected TaskCB xcreateColumnQueryCB() {
+        TaskCB cb = new TaskCB();
+        cb.xsetupForColumnQuery((TaskCB)this);
         return cb;
     }
 
@@ -367,8 +404,8 @@ public class BsWeatherCB extends AbstractConditionBean {
      * </pre>
      * @param orCBLambda The callback for query of or-condition. (NotNull)
      */
-    public void orScopeQuery(OrQuery<WeatherCB> orCBLambda) {
-        xorSQ((WeatherCB)this, orCBLambda);
+    public void orScopeQuery(OrQuery<TaskCB> orCBLambda) {
+        xorSQ((TaskCB)this, orCBLambda);
     }
 
     /**
@@ -386,8 +423,8 @@ public class BsWeatherCB extends AbstractConditionBean {
      * </pre>
      * @param andCBLambda The callback for query of and-condition. (NotNull)
      */
-    public void orScopeQueryAndPart(AndQuery<WeatherCB> andCBLambda) {
-        xorSQAP((WeatherCB)this, andCBLambda);
+    public void orScopeQueryAndPart(AndQuery<TaskCB> andCBLambda) {
+        xorSQAP((TaskCB)this, andCBLambda);
     }
 
     // ===================================================================================
@@ -417,11 +454,11 @@ public class BsWeatherCB extends AbstractConditionBean {
     //                                                                        ============
     @Override
     protected void xprepareSyncQyCall(ConditionBean mainCB) {
-        final WeatherCB cb;
+        final TaskCB cb;
         if (mainCB != null) {
-            cb = (WeatherCB)mainCB;
+            cb = (TaskCB)mainCB;
         } else {
-            cb = new WeatherCB();
+            cb = new TaskCB();
         }
         specify().xsetSyncQyCall(xcreateSpQyCall(() -> true, () -> cb.query()));
     }
@@ -430,8 +467,8 @@ public class BsWeatherCB extends AbstractConditionBean {
     //                                                                            Internal
     //                                                                            ========
     // very internal (for suppressing warn about 'Not Use Import')
-    protected String xgetConditionBeanClassNameInternally() { return WeatherCB.class.getName(); }
-    protected String xgetConditionQueryClassNameInternally() { return WeatherCQ.class.getName(); }
+    protected String xgetConditionBeanClassNameInternally() { return TaskCB.class.getName(); }
+    protected String xgetConditionQueryClassNameInternally() { return TaskCQ.class.getName(); }
     protected String xgetSubQueryClassNameInternally() { return SubQuery.class.getName(); }
     protected String xgetConditionOptionClassNameInternally() { return ConditionOption.class.getName(); }
 }
