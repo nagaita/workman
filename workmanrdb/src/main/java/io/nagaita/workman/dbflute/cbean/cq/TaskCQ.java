@@ -2,17 +2,17 @@ package io.nagaita.workman.dbflute.cbean.cq;
 
 import org.dbflute.cbean.ConditionQuery;
 import org.dbflute.cbean.sqlclause.SqlClause;
-import io.nagaita.workman.dbflute.cbean.cq.bs.BsWeatherCQ;
+import io.nagaita.workman.dbflute.cbean.cq.bs.BsTaskCQ;
 
 /**
- * The condition-query of weather.
+ * The condition-query of task.
  * <p>
  * You can implement your original methods here.
  * This class remains when re-generating.
  * </p>
  * @author DBFlute(AutoGenerator)
  */
-public class WeatherCQ extends BsWeatherCQ {
+public class TaskCQ extends BsTaskCQ {
 
     // ===================================================================================
     //                                                                         Constructor
@@ -25,7 +25,7 @@ public class WeatherCQ extends BsWeatherCQ {
      * @param aliasName The alias name for this query. (NotNull)
      * @param nestLevel The nest level of this query. (if zero, this is base query)
      */
-    public WeatherCQ(ConditionQuery referrerQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
+    public TaskCQ(ConditionQuery referrerQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
         super(referrerQuery, sqlClause, aliasName, nestLevel);
     }
 

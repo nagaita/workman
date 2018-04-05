@@ -12,21 +12,21 @@ import io.nagaita.workman.dbflute.cbean.cq.bs.*;
 import io.nagaita.workman.dbflute.cbean.cq.*;
 
 /**
- * The condition-query for in-line of weather.
+ * The condition-query for in-line of task.
  * @author DBFlute(AutoGenerator)
  */
-public class WeatherCIQ extends AbstractBsWeatherCQ {
+public class TaskCIQ extends AbstractBsTaskCQ {
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected BsWeatherCQ _myCQ;
+    protected BsTaskCQ _myCQ;
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public WeatherCIQ(ConditionQuery referrerQuery, SqlClause sqlClause
-                        , String aliasName, int nestLevel, BsWeatherCQ myCQ) {
+    public TaskCIQ(ConditionQuery referrerQuery, SqlClause sqlClause
+                        , String aliasName, int nestLevel, BsTaskCQ myCQ) {
         super(referrerQuery, sqlClause, aliasName, nestLevel);
         _myCQ = myCQ;
         _foreignPropertyName = _myCQ.xgetForeignPropertyName(); // accept foreign property name
@@ -61,14 +61,25 @@ public class WeatherCIQ extends AbstractBsWeatherCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    protected ConditionValue xgetCValueCity() { return _myCQ.xdfgetCity(); }
-    protected ConditionValue xgetCValueTempLo() { return _myCQ.xdfgetTempLo(); }
-    protected ConditionValue xgetCValueTempHi() { return _myCQ.xdfgetTempHi(); }
-    protected ConditionValue xgetCValuePrcp() { return _myCQ.xdfgetPrcp(); }
-    protected ConditionValue xgetCValueDate() { return _myCQ.xdfgetDate(); }
+    protected ConditionValue xgetCValueId() { return _myCQ.xdfgetId(); }
+    protected ConditionValue xgetCValueTitle() { return _myCQ.xdfgetTitle(); }
+    protected ConditionValue xgetCValueDeadline() { return _myCQ.xdfgetDeadline(); }
+    protected ConditionValue xgetCValueScheduled() { return _myCQ.xdfgetScheduled(); }
+    protected ConditionValue xgetCValueCreatedAt() { return _myCQ.xdfgetCreatedAt(); }
+    protected ConditionValue xgetCValueCreatedBy() { return _myCQ.xdfgetCreatedBy(); }
+    protected ConditionValue xgetCValueUpdatedAt() { return _myCQ.xdfgetUpdatedAt(); }
+    protected ConditionValue xgetCValueUpdatedBy() { return _myCQ.xdfgetUpdatedBy(); }
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    public String keepScalarCondition(WeatherCQ sq)
+    public String keepScalarCondition(TaskCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
+    public String keepSpecifyMyselfDerived(TaskCQ sq)
+    { throwIICBOE("(Specify)MyselfDerived"); return null;}
+    public String keepQueryMyselfDerived(TaskCQ sq)
+    { throwIICBOE("(Query)MyselfDerived"); return null;}
+    public String keepQueryMyselfDerivedParameter(Object vl)
+    { throwIICBOE("(Query)MyselfDerived"); return null;}
+    public String keepMyselfExists(TaskCQ sq)
+    { throwIICBOE("MyselfExists"); return null;}
 
     protected void throwIICBOE(String name)
     { throw new IllegalConditionBeanOperationException(name + " at InlineView is unsupported."); }
@@ -77,6 +88,6 @@ public class WeatherCIQ extends AbstractBsWeatherCQ {
     //                                                                       Very Internal
     //                                                                       =============
     // very internal (for suppressing warn about 'Not Use Import')
-    protected String xinCB() { return WeatherCB.class.getName(); }
-    protected String xinCQ() { return WeatherCQ.class.getName(); }
+    protected String xinCB() { return TaskCB.class.getName(); }
+    protected String xinCQ() { return TaskCQ.class.getName(); }
 }

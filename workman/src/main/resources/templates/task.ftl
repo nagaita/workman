@@ -16,6 +16,7 @@
         <tbody>
         <#list tasks as task>
         <tr>
+            <td>${task.id}</td>
             <td>${task.title}</td>
         </tr>
         </#list>
