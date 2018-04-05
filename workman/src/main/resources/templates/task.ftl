@@ -1,3 +1,4 @@
+<#import "/spring.ftl" as spring/>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -5,12 +6,37 @@
     <title>Workman</title>
 </head>
 <body>
-<h1>Task list</h1>
+<div>
+    <fieldset>
+        <form action="/tasks" method="POST">
+        <@spring.bind "taskForm"/>
+            <table>
+                <tr>
+                    <td>Title</td>
+                    <td><@spring.formInput "taskForm.title"/></td>
+                </tr>
+                <tr>
+                    <td>Deadline</td>
+                    <td><@spring.formInput "taskForm.deadline", "", "date"/></td>
+                </tr>
+                <tr>
+                    <td>Scheduled</td>
+                    <td><@spring.formInput "taskForm.scheduled", "", "date"/></td>
+                </tr>
+            </table>
+            <input type="submit" value="Add"/>
+        </form>
+    </fieldset>
+<#list spring.status.errorMessages as error> <b>${error}</b> <br> </#list>
+</div>
 <div>
     <table>
         <thead>
         <tr>
-            <th>title</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Deadline</th>
+            <th>Scheduled</th>
         </tr>
         </thead>
         <tbody>
@@ -18,6 +44,8 @@
         <tr>
             <td>${task.id}</td>
             <td>${task.title}</td>
+            <td>${task.deadline!}</td>
+            <td>${task.scheduled!}</td>
         </tr>
         </#list>
         </tbody>
