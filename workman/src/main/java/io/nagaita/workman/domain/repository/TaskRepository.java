@@ -8,4 +8,6 @@ public interface TaskRepository {
 
 	List<Task> get();
 
+	void add(Task task);
+
 }

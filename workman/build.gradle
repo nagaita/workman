@@ -37,6 +37,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-jdbc')
     //compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-aop')
     compile('de.codecentric:spring-boot-admin-starter-client')
     compile('de.codecentric:spring-boot-admin-starter-server')
     runtime('org.springframework.boot:spring-boot-devtools')

@@ -1,13 +1,11 @@
-package io.nagaita.workman.domain.model;
+package io.nagaita.workman.web;
 
-import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
-@Builder
-public class Task {
+public class TaskForm {
 
 	private Long id;
 	private String title;
