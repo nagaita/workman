@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.dbflute.Entity;
+import org.dbflute.optional.OptionalEntity;
 import org.dbflute.dbmeta.AbstractDBMeta;
 import org.dbflute.dbmeta.info.*;
 import org.dbflute.dbmeta.name.*;
@@ -44,6 +45,7 @@ public class TaskDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((Task)et).getId(), (et, vl) -> ((Task)et).setId(ctl(vl)), "id");
         setupEpg(_epgMap, et -> ((Task)et).getTitle(), (et, vl) -> ((Task)et).setTitle((String)vl), "title");
+        setupEpg(_epgMap, et -> ((Task)et).getStatus(), (et, vl) -> ((Task)et).setStatus((String)vl), "status");
         setupEpg(_epgMap, et -> ((Task)et).getDeadline(), (et, vl) -> ((Task)et).setDeadline(ctldt(vl)), "deadline");
         setupEpg(_epgMap, et -> ((Task)et).getScheduled(), (et, vl) -> ((Task)et).setScheduled(ctldt(vl)), "scheduled");
         setupEpg(_epgMap, et -> ((Task)et).getCreatedAt(), (et, vl) -> ((Task)et).setCreatedAt(ctldt(vl)), "createdAt");
@@ -53,6 +55,18 @@ public class TaskDbm extends AbstractDBMeta {
     }
     public PropertyGateway findPropertyGateway(String prop)
     { return doFindEpg(_epgMap, prop); }
+
+    // -----------------------------------------------------
+    //                                      Foreign Property
+    //                                      ----------------
+    protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
+    { xsetupEfpg(); }
+    @SuppressWarnings("unchecked")
+    protected void xsetupEfpg() {
+        setupEfpg(_efpgMap, et -> ((Task)et).getTaskStatus(), (et, vl) -> ((Task)et).setTaskStatus((OptionalEntity<TaskStatus>)vl), "taskStatus");
+    }
+    public PropertyGateway findForeignPropertyGateway(String prop)
+    { return doFindEfpg(_efpgMap, prop); }
 
     // ===================================================================================
     //                                                                          Table Info
@@ -72,6 +86,7 @@ public class TaskDbm extends AbstractDBMeta {
     //                                                                         ===========
     protected final ColumnInfo _columnId = cci("id", "id", null, null, Long.class, "id", null, true, true, true, "bigserial", 19, 0, null, "nextval('task_id_seq'::regclass)", false, null, null, null, null, null, false);
     protected final ColumnInfo _columnTitle = cci("title", "title", null, null, String.class, "title", null, false, false, true, "varchar", 256, 0, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnStatus = cci("status", "status", null, null, String.class, "status", null, false, false, true, "bpchar", 16, 0, null, null, false, null, null, "taskStatus", null, null, false);
     protected final ColumnInfo _columnDeadline = cci("deadline", "deadline", null, null, java.time.LocalDateTime.class, "deadline", null, false, false, false, "timestamp", 29, 6, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnScheduled = cci("scheduled", "scheduled", null, null, java.time.LocalDateTime.class, "scheduled", null, false, false, false, "timestamp", 29, 6, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnCreatedAt = cci("created_at", "created_at", null, null, java.time.LocalDateTime.class, "createdAt", null, false, false, true, "timestamp", 29, 6, null, null, true, null, null, null, null, null, false);
@@ -89,6 +104,11 @@ public class TaskDbm extends AbstractDBMeta {
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnTitle() { return _columnTitle; }
+    /**
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @return The information object of specified column. (NotNull)
+     */
+    public ColumnInfo columnStatus() { return _columnStatus; }
     /**
      * deadline: {timestamp(29, 6)}
      * @return The information object of specified column. (NotNull)
@@ -124,6 +144,7 @@ public class TaskDbm extends AbstractDBMeta {
         List<ColumnInfo> ls = newArrayList();
         ls.add(columnId());
         ls.add(columnTitle());
+        ls.add(columnStatus());
         ls.add(columnDeadline());
         ls.add(columnScheduled());
         ls.add(columnCreatedAt());
@@ -153,6 +174,14 @@ public class TaskDbm extends AbstractDBMeta {
     // -----------------------------------------------------
     //                                      Foreign Property
     //                                      ----------------
+    /**
+     * task_status by my status, named 'taskStatus'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTaskStatus() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStatus(), TaskStatusDbm.getInstance().columnCode());
+        return cfi("task_status_fkey", "taskStatus", this, TaskStatusDbm.getInstance(), mp, 0, org.dbflute.optional.OptionalEntity.class, false, false, false, false, null, null, false, "taskList", false);
+    }
 
     // -----------------------------------------------------
     //                                     Referrer Property

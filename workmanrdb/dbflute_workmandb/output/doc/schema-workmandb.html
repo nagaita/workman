@@ -356,17 +356,26 @@ dl.procedurelist dd.column pre {
 	<tbody id="table-list-body">
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="namecell" data-name="task"><a href="#task" title="type=TABLE, primaryKey={id}, nameLength=4, columnCount=8">task</a></td>
+		<td class="namecell" data-name="task"><a href="#task" title="type=TABLE, primaryKey={id}, nameLength=4, columnCount=9">task</a></td>
 		<td class="typecell">TABLE</td>
-		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#task_status" title="task_status_fkey">task_status</a></td>
 		<td class="relcell">&nbsp;</td>
 		<td class="commentcell task_comment"><pre>&nbsp;</pre></td>
 		<td class="subcell">Task</td>
 	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="namecell" data-name="task_status"><a href="#task_status" title="type=TABLE, primaryKey={code}, nameLength=11, columnCount=4">task_status</a></td>
+		<td class="typecell">TABLE</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"><a href="#task" title="task_status_fkey">task</a></td>
+		<td class="commentcell task_status_comment"><pre>&nbsp;</pre></td>
+		<td class="subcell">TaskStatus</td>
+	</tr>
 	</tbody>
 </table>
 
-<h2 id="task" title="type=TABLE, primaryKey={id}, nameLength=4, columnCount=8">
+<h2 id="task" title="type=TABLE, primaryKey={id}, nameLength=4, columnCount=9">
 task
 </h2>
 <div class="tablecomment task_comment" data-name="task"><pre></pre></div>
@@ -431,6 +440,23 @@ task
 		<td class="flgcell"> &nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class=" columnnamecell" id="task_status">status</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 16 </td>
+		<td class="relcell"><a href="#task_status" title="task_status_fkey">task_status</a>&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>&nbsp;</pre></td>
+		<td class="subcell">status</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell"> &nbsp;</td>
 		<td class=" columnnamecell" id="task_deadline">deadline</td>
 		<td class="typecell">timestamp</td>
@@ -443,7 +469,7 @@ task
 		<td class="subcell">LocalDateTime</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">4</td>
+		<td class="rownumcell">5</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell"> &nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
@@ -460,7 +486,7 @@ task
 		<td class="subcell">LocalDateTime</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">5</td>
+		<td class="rownumcell">6</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell"> &nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
@@ -477,7 +503,7 @@ task
 		<td class="subcell">LocalDateTime</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">6</td>
+		<td class="rownumcell">7</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell"> &nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
@@ -494,7 +520,7 @@ task
 		<td class="subcell">String</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">7</td>
+		<td class="rownumcell">8</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell"> &nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
@@ -511,7 +537,7 @@ task
 		<td class="subcell">LocalDateTime</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">8</td>
+		<td class="rownumcell">9</td>
 		<td class="flgcell">&nbsp;</td>
 		<td class="flgcell"> &nbsp;</td>
 		<td class="flgcell">&nbsp;</td>
@@ -526,6 +552,101 @@ task
 		<td class="commentcell"><pre>&nbsp;</pre></td>
 		<td class="subcell">updatedBy</td>
 		<td class="subcell">String</td>
+	</tr>
+</table>
+
+<h2 id="task_status" title="type=TABLE, primaryKey={code}, nameLength=11, columnCount=4">
+task_status
+</h2>
+<div class="tablecomment task_status_comment" data-name="task_status"><pre></pre></div>
+<input type="hidden" value="task_status">
+<table class="tablecontent">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>PK</th>
+		<th>ID</th>
+		<th>UQ</th>
+		<th>IX</th>
+		<th>Not<br />Null</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Size</th>
+		<th>ForeignTable</th>
+		<th>ReferrerTable</th>
+		<th>Classification</th>
+		<th>ColumnComment</th>
+		<th>PropertyName</th>
+		<th>JavaType</th>
+	</tr>
+	</thead>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="flgcell" title="task_status_pkey">o</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class=" columnnamecell" id="task_status_code">code</td>
+		<td class="typecell">bpchar</td>
+		<td class="sizecell"> 16 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell"><a href="#task" title="task_status_fkey">task</a>&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>&nbsp;</pre></td>
+		<td class="subcell">code</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class=" columnnamecell" id="task_status_name">name</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 64 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>&nbsp;</pre></td>
+		<td class="subcell">name</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class=" columnnamecell" id="task_status_description">description</td>
+		<td class="typecell">varchar</td>
+		<td class="sizecell"> 256 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>&nbsp;</pre></td>
+		<td class="subcell">description</td>
+		<td class="subcell">String</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell"> &nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">&nbsp;</td>
+		<td class="flgcell">*</td>
+		<td class=" columnnamecell" id="task_status_display_order">display_order</td>
+		<td class="typecell">int4</td>
+		<td class="sizecell"> 10 </td>
+		<td class="relcell">&nbsp;&nbsp;</td>
+		<td class="relcell">&nbsp;</td>
+		<td class="relcell"> &nbsp;</td>
+		<td class="commentcell"><pre>&nbsp;</pre></td>
+		<td class="subcell">displayOrder</td>
+		<td class="subcell">Integer</td>
 	</tr>
 </table>
 
@@ -917,6 +1038,9 @@ function Decomment() {
 				, 'title': {
 					'databaseComment': ''
 				}
+				, 'status': {
+					'databaseComment': ''
+				}
 				, 'deadline': {
 					'databaseComment': ''
 				}
@@ -933,6 +1057,23 @@ function Decomment() {
 					'databaseComment': ''
 				}
 				, 'updated_by': {
+					'databaseComment': ''
+				}
+			}
+		}
+		, 'task_status': {
+			'databaseComment': ''
+			, 'columns': {
+				'code': {
+					'databaseComment': ''
+				}
+				, 'name': {
+					'databaseComment': ''
+				}
+				, 'description': {
+					'databaseComment': ''
+				}
+				, 'display_order': {
 					'databaseComment': ''
 				}
 			}

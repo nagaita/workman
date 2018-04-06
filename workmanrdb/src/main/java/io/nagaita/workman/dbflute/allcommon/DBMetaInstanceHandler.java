@@ -32,6 +32,7 @@ public class DBMetaInstanceHandler implements DBMetaProvider {
     static {
         final Map<String, String> tmpMap = newHashMap();
         tmpMap.put("task", "io.nagaita.workman.dbflute.bsentity.dbmeta.TaskDbm");
+        tmpMap.put("task_status", "io.nagaita.workman.dbflute.bsentity.dbmeta.TaskStatusDbm");
         _tableDbNameClassNameMap = Collections.unmodifiableMap(tmpMap);
     }
 

@@ -20,20 +20,20 @@ import io.nagaita.workman.dbflute.cbean.*;
 import io.nagaita.workman.dbflute.cbean.cq.*;
 
 /**
- * The base condition-bean of task.
+ * The base condition-bean of task_status.
  * @author DBFlute(AutoGenerator)
  */
-public class BsTaskCB extends AbstractConditionBean {
+public class BsTaskStatusCB extends AbstractConditionBean {
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected TaskCQ _conditionQuery;
+    protected TaskStatusCQ _conditionQuery;
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public BsTaskCB() {
+    public BsTaskStatusCB() {
         if (DBFluteConfig.getInstance().isPagingCountLater()) {
             enablePagingCountLater();
         }
@@ -72,7 +72,7 @@ public class BsTaskCB extends AbstractConditionBean {
     }
 
     public String asTableDbName() {
-        return "task";
+        return "task_status";
     }
 
     // ===================================================================================
@@ -80,23 +80,23 @@ public class BsTaskCB extends AbstractConditionBean {
     //                                                                 ===================
     /**
      * Accept the query condition of primary key as equal.
-     * @param id : PK, ID, NotNull, bigserial(19). (NotNull)
+     * @param code : PK, NotNull, bpchar(16). (NotNull)
      * @return this. (NotNull)
      */
-    public TaskCB acceptPK(Long id) {
-        assertObjectNotNull("id", id);
-        BsTaskCB cb = this;
-        cb.query().setId_Equal(id);
-        return (TaskCB)this;
+    public TaskStatusCB acceptPK(String code) {
+        assertObjectNotNull("code", code);
+        BsTaskStatusCB cb = this;
+        cb.query().setCode_Equal(code);
+        return (TaskStatusCB)this;
     }
 
     public ConditionBean addOrderBy_PK_Asc() {
-        query().addOrderBy_Id_Asc();
+        query().addOrderBy_Code_Asc();
         return this;
     }
 
     public ConditionBean addOrderBy_PK_Desc() {
-        query().addOrderBy_Id_Desc();
+        query().addOrderBy_Code_Desc();
         return this;
     }
 
@@ -160,34 +160,34 @@ public class BsTaskCB extends AbstractConditionBean {
      * </pre>
      * @return The instance of condition-query for base-point table to set up query. (NotNull)
      */
-    public TaskCQ query() {
+    public TaskStatusCQ query() {
         assertQueryPurpose(); // assert only when user-public query
         return doGetConditionQuery();
     }
 
-    public TaskCQ xdfgetConditionQuery() { // public for parameter comment and internal
+    public TaskStatusCQ xdfgetConditionQuery() { // public for parameter comment and internal
         return doGetConditionQuery();
     }
 
-    protected TaskCQ doGetConditionQuery() {
+    protected TaskStatusCQ doGetConditionQuery() {
         if (_conditionQuery == null) {
             _conditionQuery = createLocalCQ();
         }
         return _conditionQuery;
     }
 
-    protected TaskCQ createLocalCQ() {
+    protected TaskStatusCQ createLocalCQ() {
         return xcreateCQ(null, getSqlClause(), getSqlClause().getBasePointAliasName(), 0);
     }
 
-    protected TaskCQ xcreateCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
-        TaskCQ cq = xnewCQ(childQuery, sqlClause, aliasName, nestLevel);
+    protected TaskStatusCQ xcreateCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
+        TaskStatusCQ cq = xnewCQ(childQuery, sqlClause, aliasName, nestLevel);
         cq.xsetBaseCB(this);
         return cq;
     }
 
-    protected TaskCQ xnewCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
-        return new TaskCQ(childQuery, sqlClause, aliasName, nestLevel);
+    protected TaskStatusCQ xnewCQ(ConditionQuery childQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
+        return new TaskStatusCQ(childQuery, sqlClause, aliasName, nestLevel);
     }
 
     /**
@@ -211,10 +211,10 @@ public class BsTaskCB extends AbstractConditionBean {
      * </pre>
      * @param unionCBLambda The callback for query of 'union'. (NotNull)
      */
-    public void union(UnionQuery<TaskCB> unionCBLambda) {
-        final TaskCB cb = new TaskCB(); cb.xsetupForUnion(this); xsyncUQ(cb);
+    public void union(UnionQuery<TaskStatusCB> unionCBLambda) {
+        final TaskStatusCB cb = new TaskStatusCB(); cb.xsetupForUnion(this); xsyncUQ(cb);
         try { lock(); unionCBLambda.query(cb); } finally { unlock(); } xsaveUCB(cb);
-        final TaskCQ cq = cb.query(); query().xsetUnionQuery(cq);
+        final TaskStatusCQ cq = cb.query(); query().xsetUnionQuery(cq);
     }
 
     /**
@@ -228,35 +228,15 @@ public class BsTaskCB extends AbstractConditionBean {
      * </pre>
      * @param unionCBLambda The callback for query of 'union all'. (NotNull)
      */
-    public void unionAll(UnionQuery<TaskCB> unionCBLambda) {
-        final TaskCB cb = new TaskCB(); cb.xsetupForUnion(this); xsyncUQ(cb);
+    public void unionAll(UnionQuery<TaskStatusCB> unionCBLambda) {
+        final TaskStatusCB cb = new TaskStatusCB(); cb.xsetupForUnion(this); xsyncUQ(cb);
         try { lock(); unionCBLambda.query(cb); } finally { unlock(); } xsaveUCB(cb);
-        final TaskCQ cq = cb.query(); query().xsetUnionAllQuery(cq);
+        final TaskStatusCQ cq = cb.query(); query().xsetUnionAllQuery(cq);
     }
 
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    /**
-     * Set up relation columns to select clause. <br>
-     * task_status by my status, named 'taskStatus'.
-     * <pre>
-     * <span style="color: #0000C0">taskBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TaskStatus()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">task</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">task</span>.<span style="color: #CC4747">getTaskStatus()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     */
-    public void setupSelect_TaskStatus() {
-        assertSetupSelectPurpose("taskStatus");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnStatus();
-        }
-        doSetupSelect(() -> query().queryTaskStatus());
-    }
-
     // [DBFlute-0.7.4]
     // ===================================================================================
     //                                                                             Specify
@@ -297,96 +277,63 @@ public class BsTaskCB extends AbstractConditionBean {
         return _specification != null && _specification.hasSpecifiedColumn();
     }
 
-    public static class HpSpecification extends HpAbstractSpecification<TaskCQ> {
-        protected TaskStatusCB.HpSpecification _taskStatus;
-        public HpSpecification(ConditionBean baseCB, HpSpQyCall<TaskCQ> qyCall
+    public static class HpSpecification extends HpAbstractSpecification<TaskStatusCQ> {
+        public HpSpecification(ConditionBean baseCB, HpSpQyCall<TaskStatusCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
         { super(baseCB, qyCall, purpose, dbmetaProvider, sdrFuncFactory); }
         /**
-         * id: {PK, ID, NotNull, bigserial(19)}
+         * code: {PK, NotNull, bpchar(16)}
          * @return The information object of specified column. (NotNull)
          */
-        public SpecifiedColumn columnId() { return doColumn("id"); }
+        public SpecifiedColumn columnCode() { return doColumn("code"); }
         /**
-         * title: {NotNull, varchar(256)}
+         * name: {NotNull, varchar(64)}
          * @return The information object of specified column. (NotNull)
          */
-        public SpecifiedColumn columnTitle() { return doColumn("title"); }
+        public SpecifiedColumn columnName() { return doColumn("name"); }
         /**
-         * status: {NotNull, bpchar(16), FK to task_status}
+         * description: {varchar(256)}
          * @return The information object of specified column. (NotNull)
          */
-        public SpecifiedColumn columnStatus() { return doColumn("status"); }
+        public SpecifiedColumn columnDescription() { return doColumn("description"); }
         /**
-         * deadline: {timestamp(29, 6)}
+         * display_order: {NotNull, int4(10)}
          * @return The information object of specified column. (NotNull)
          */
-        public SpecifiedColumn columnDeadline() { return doColumn("deadline"); }
-        /**
-         * scheduled: {timestamp(29, 6)}
-         * @return The information object of specified column. (NotNull)
-         */
-        public SpecifiedColumn columnScheduled() { return doColumn("scheduled"); }
-        /**
-         * created_at: {NotNull, timestamp(29, 6)}
-         * @return The information object of specified column. (NotNull)
-         */
-        public SpecifiedColumn columnCreatedAt() { return doColumn("created_at"); }
-        /**
-         * created_by: {NotNull, varchar(256)}
-         * @return The information object of specified column. (NotNull)
-         */
-        public SpecifiedColumn columnCreatedBy() { return doColumn("created_by"); }
-        /**
-         * updated_at: {NotNull, timestamp(29, 6)}
-         * @return The information object of specified column. (NotNull)
-         */
-        public SpecifiedColumn columnUpdatedAt() { return doColumn("updated_at"); }
-        /**
-         * updated_by: {NotNull, varchar(256)}
-         * @return The information object of specified column. (NotNull)
-         */
-        public SpecifiedColumn columnUpdatedBy() { return doColumn("updated_by"); }
+        public SpecifiedColumn columnDisplayOrder() { return doColumn("display_order"); }
         public void everyColumn() { doEveryColumn(); }
         public void exceptRecordMetaColumn() { doExceptRecordMetaColumn(); }
         @Override
         protected void doSpecifyRequiredColumn() {
-            columnId(); // PK
-            if (qyCall().qy().hasConditionQueryTaskStatus()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TaskStatusCQ) {
-                columnStatus(); // FK or one-to-one referrer
-            }
+            columnCode(); // PK
         }
         @Override
-        protected String getTableDbName() { return "task"; }
+        protected String getTableDbName() { return "task_status"; }
         /**
-         * Prepare to specify functions about relation table. <br>
-         * task_status by my status, named 'taskStatus'.
-         * @return The instance for specification for relation table to specify. (NotNull)
+         * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
+         * {select max(FOO) from task where ...) as FOO_MAX} <br>
+         * task by status, named 'taskList'.
+         * <pre>
+         * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(taskCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+         *     taskCB.specify().<span style="color: #CC4747">column...</span> <span style="color: #3F7E5E">// derived column by function</span>
+         *     taskCB.query().set... <span style="color: #3F7E5E">// referrer condition</span>
+         * }, Task.<span style="color: #CC4747">ALIAS_foo...</span>);
+         * </pre>
+         * @return The object to set up a function for referrer table. (NotNull)
          */
-        public TaskStatusCB.HpSpecification specifyTaskStatus() {
-            assertRelation("taskStatus");
-            if (_taskStatus == null) {
-                _taskStatus = new TaskStatusCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTaskStatus()
-                                    , () -> _qyCall.qy().queryTaskStatus())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _taskStatus.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTaskStatus()
-                      , () -> xsyncQyCall().qy().queryTaskStatus()));
-                }
-            }
-            return _taskStatus;
+        public HpSDRFunction<TaskCB, TaskStatusCQ> derivedTask() {
+            assertDerived("taskList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TaskCB> sq, TaskStatusCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsderiveTaskList(fn, sq, al, op), _dbmetaProvider);
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).
          * @return The object to set up a function for myself table. (NotNull)
          */
-        public HpSDRFunction<TaskCB, TaskCQ> myselfDerived() {
+        public HpSDRFunction<TaskStatusCB, TaskStatusCQ> myselfDerived() {
             assertDerived("myselfDerived"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TaskCB> sq, TaskCQ cq, String al, DerivedReferrerOption op)
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TaskStatusCB> sq, TaskStatusCQ cq, String al, DerivedReferrerOption op)
                     -> cq.xsmyselfDerive(fn, sq, al, op), _dbmetaProvider);
         }
     }
@@ -399,9 +346,9 @@ public class BsTaskCB extends AbstractConditionBean {
      * This is very specialty so you can get the frontier spirit. Bon voyage!
      * @return The condition-bean for dream cruise, which is linked to main condition-bean.
      */
-    public TaskCB dreamCruiseCB() {
-        TaskCB cb = new TaskCB();
-        cb.xsetupForDreamCruise((TaskCB) this);
+    public TaskStatusCB dreamCruiseCB() {
+        TaskStatusCB cb = new TaskStatusCB();
+        cb.xsetupForDreamCruise((TaskStatusCB) this);
         return cb;
     }
 
@@ -426,15 +373,15 @@ public class BsTaskCB extends AbstractConditionBean {
      * @param colCBLambda The callback for specify-query of left column. (NotNull)
      * @return The object for setting up operand and right column. (NotNull)
      */
-    public HpColQyOperand<TaskCB> columnQuery(final SpecifyQuery<TaskCB> colCBLambda) {
+    public HpColQyOperand<TaskStatusCB> columnQuery(final SpecifyQuery<TaskStatusCB> colCBLambda) {
         return xcreateColQyOperand((rightSp, operand) -> {
             return xcolqy(xcreateColumnQueryCB(), xcreateColumnQueryCB(), colCBLambda, rightSp, operand);
         });
     }
 
-    protected TaskCB xcreateColumnQueryCB() {
-        TaskCB cb = new TaskCB();
-        cb.xsetupForColumnQuery((TaskCB)this);
+    protected TaskStatusCB xcreateColumnQueryCB() {
+        TaskStatusCB cb = new TaskStatusCB();
+        cb.xsetupForColumnQuery((TaskStatusCB)this);
         return cb;
     }
 
@@ -454,8 +401,8 @@ public class BsTaskCB extends AbstractConditionBean {
      * </pre>
      * @param orCBLambda The callback for query of or-condition. (NotNull)
      */
-    public void orScopeQuery(OrQuery<TaskCB> orCBLambda) {
-        xorSQ((TaskCB)this, orCBLambda);
+    public void orScopeQuery(OrQuery<TaskStatusCB> orCBLambda) {
+        xorSQ((TaskStatusCB)this, orCBLambda);
     }
 
     /**
@@ -473,8 +420,8 @@ public class BsTaskCB extends AbstractConditionBean {
      * </pre>
      * @param andCBLambda The callback for query of and-condition. (NotNull)
      */
-    public void orScopeQueryAndPart(AndQuery<TaskCB> andCBLambda) {
-        xorSQAP((TaskCB)this, andCBLambda);
+    public void orScopeQueryAndPart(AndQuery<TaskStatusCB> andCBLambda) {
+        xorSQAP((TaskStatusCB)this, andCBLambda);
     }
 
     // ===================================================================================
@@ -504,11 +451,11 @@ public class BsTaskCB extends AbstractConditionBean {
     //                                                                        ============
     @Override
     protected void xprepareSyncQyCall(ConditionBean mainCB) {
-        final TaskCB cb;
+        final TaskStatusCB cb;
         if (mainCB != null) {
-            cb = (TaskCB)mainCB;
+            cb = (TaskStatusCB)mainCB;
         } else {
-            cb = new TaskCB();
+            cb = new TaskStatusCB();
         }
         specify().xsetSyncQyCall(xcreateSpQyCall(() -> true, () -> cb.query()));
     }
@@ -517,8 +464,8 @@ public class BsTaskCB extends AbstractConditionBean {
     //                                                                            Internal
     //                                                                            ========
     // very internal (for suppressing warn about 'Not Use Import')
-    protected String xgetConditionBeanClassNameInternally() { return TaskCB.class.getName(); }
-    protected String xgetConditionQueryClassNameInternally() { return TaskCQ.class.getName(); }
+    protected String xgetConditionBeanClassNameInternally() { return TaskStatusCB.class.getName(); }
+    protected String xgetConditionQueryClassNameInternally() { return TaskStatusCQ.class.getName(); }
     protected String xgetSubQueryClassNameInternally() { return SubQuery.class.getName(); }
     protected String xgetConditionOptionClassNameInternally() { return ConditionOption.class.getName(); }
 }

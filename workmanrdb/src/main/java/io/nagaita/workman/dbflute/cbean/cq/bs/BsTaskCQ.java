@@ -113,6 +113,26 @@ public class BsTaskCQ extends AbstractBsTaskCQ {
      */
     public BsTaskCQ addOrderBy_Title_Desc() { regOBD("title"); return this; }
 
+    protected ConditionValue _status;
+    public ConditionValue xdfgetStatus()
+    { if (_status == null) { _status = nCV(); }
+      return _status; }
+    protected ConditionValue xgetCValueStatus() { return xdfgetStatus(); }
+
+    /**
+     * Add order-by as ascend. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @return this. (NotNull)
+     */
+    public BsTaskCQ addOrderBy_Status_Asc() { regOBA("status"); return this; }
+
+    /**
+     * Add order-by as descend. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @return this. (NotNull)
+     */
+    public BsTaskCQ addOrderBy_Status_Desc() { regOBD("status"); return this; }
+
     protected ConditionValue _deadline;
     public ConditionValue xdfgetDeadline()
     { if (_deadline == null) { _deadline = nCV(); }
@@ -272,11 +292,36 @@ public class BsTaskCQ extends AbstractBsTaskCQ {
     //                                                                         Union Query
     //                                                                         ===========
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
+        TaskCQ bq = (TaskCQ)bqs;
+        TaskCQ uq = (TaskCQ)uqs;
+        if (bq.hasConditionQueryTaskStatus()) {
+            uq.queryTaskStatus().reflectRelationOnUnionQuery(bq.queryTaskStatus(), uq.queryTaskStatus());
+        }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
+    /**
+     * Get the condition-query for relation table. <br>
+     * task_status by my status, named 'taskStatus'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TaskStatusCQ queryTaskStatus() {
+        return xdfgetConditionQueryTaskStatus();
+    }
+    public TaskStatusCQ xdfgetConditionQueryTaskStatus() {
+        String prop = "taskStatus";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTaskStatus()); xsetupOuterJoinTaskStatus(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TaskStatusCQ xcreateQueryTaskStatus() {
+        String nrp = xresolveNRP("task", "taskStatus"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TaskStatusCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "taskStatus", nrp);
+    }
+    protected void xsetupOuterJoinTaskStatus() { xregOutJo("taskStatus"); }
+    public boolean hasConditionQueryTaskStatus() { return xhasQueRlMap("taskStatus"); }
+
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }

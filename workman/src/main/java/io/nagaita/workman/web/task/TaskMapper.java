@@ -1,4 +1,4 @@
-package io.nagaita.workman.web;
+package io.nagaita.workman.web.task;
 
 import io.nagaita.workman.domain.model.Task;
 import org.springframework.stereotype.Component;
