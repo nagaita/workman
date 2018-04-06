@@ -16,23 +16,23 @@ public class DBFluteTaskRepository implements TaskRepository {
 
 	private TaskBhv taskBhv;
 
-	private Task entity2model(io.nagaita.workman.dbflute.exentity.Task e) {
+	private Task entity2model(io.nagaita.workman.dbflute.exentity.Task entity) {
 		// @formatter:off
 		return Task.builder()
-				.id(e.getId())
-				.title(e.getTitle())
-				.deadline(e.getDeadline())
-				.scheduled(e.getScheduled())
+				.id(entity.getId())
+				.title(entity.getTitle())
+				.deadline(entity.getDeadline())
+				.scheduled(entity.getScheduled())
 				.build();
 		// @formatter:on
 	}
 
-	private io.nagaita.workman.dbflute.exentity.Task model2entity(Task m) {
+	private io.nagaita.workman.dbflute.exentity.Task model2entity(Task model) {
 		val entity = new io.nagaita.workman.dbflute.exentity.Task();
-		entity.setId(m.getId());
-		entity.setTitle(m.getTitle());
-		entity.setDeadline(m.getDeadline());
-		entity.setScheduled(m.getScheduled());
+		entity.setId(model.getId());
+		entity.setTitle(model.getTitle());
+		entity.setDeadline(model.getDeadline());
+		entity.setScheduled(model.getScheduled());
 		return entity;
 	}
 

@@ -9,6 +9,8 @@
             primaryKey="true" required="true" size="19" type="BIGINT"/>
         <column dbType="varchar" javaType="String" name="title"
             required="true" size="256" type="VARCHAR"/>
+        <column dbType="bpchar" javaType="String" name="status"
+            required="true" size="16" type="CHAR"/>
         <column dbType="timestamp" javaType="java.time.LocalDateTime"
             name="deadline" size="29, 6" type="TIMESTAMP"/>
         <column dbType="timestamp" javaType="java.time.LocalDateTime"
@@ -21,6 +23,20 @@
             name="updated_at" required="true" size="29, 6" type="TIMESTAMP"/>
         <column dbType="varchar" javaType="String" name="updated_by"
             required="true" size="256" type="VARCHAR"/>
+        <foreign-key foreignSchema="public" foreignTable="task_status" name="task_status_fkey">
+            <reference foreign="code" local="status"/>
+        </foreign-key>
+    </table>
+    <table name="task_status" schema="workmandb.public" type="TABLE">
+        <column dbType="bpchar" javaType="String" name="code"
+            pkName="task_status_pkey" pkPosition="1" primaryKey="true"
+            required="true" size="16" type="CHAR"/>
+        <column dbType="varchar" javaType="String" name="name"
+            required="true" size="64" type="VARCHAR"/>
+        <column dbType="varchar" javaType="String" name="description"
+            size="256" type="VARCHAR"/>
+        <column dbType="int4" javaType="Integer" name="display_order"
+            required="true" size="10" type="INTEGER"/>
     </table>
     <sequenceGroup>
         <sequence incrementSize="1" maximumValue="9223372036854775807"

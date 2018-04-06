@@ -3,9 +3,11 @@ package io.nagaita.workman.dbflute.bsentity;
 import java.util.List;
 import java.util.ArrayList;
 
+import org.dbflute.Entity;
 import org.dbflute.dbmeta.DBMeta;
 import org.dbflute.dbmeta.AbstractEntity;
 import org.dbflute.dbmeta.accessory.DomainEntity;
+import org.dbflute.optional.OptionalEntity;
 import io.nagaita.workman.dbflute.allcommon.EntityDefinedCommonColumn;
 import io.nagaita.workman.dbflute.allcommon.DBMetaInstanceHandler;
 import io.nagaita.workman.dbflute.exentity.*;
@@ -17,7 +19,7 @@ import io.nagaita.workman.dbflute.exentity.*;
  *     id
  *
  * [column]
- *     id, title, deadline, scheduled, created_at, created_by, updated_at, updated_by
+ *     id, title, status, deadline, scheduled, created_at, created_by, updated_at, updated_by
  *
  * [sequence]
  *     task_id_seq
@@ -29,13 +31,13 @@ import io.nagaita.workman.dbflute.exentity.*;
  *     
  *
  * [foreign table]
- *     
+ *     task_status
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     
+ *     taskStatus
  *
  * [referrer property]
  *     
@@ -44,6 +46,7 @@ import io.nagaita.workman.dbflute.exentity.*;
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Long id = entity.getId();
  * String title = entity.getTitle();
+ * String status = entity.getStatus();
  * java.time.LocalDateTime deadline = entity.getDeadline();
  * java.time.LocalDateTime scheduled = entity.getScheduled();
  * java.time.LocalDateTime createdAt = entity.getCreatedAt();
@@ -52,6 +55,7 @@ import io.nagaita.workman.dbflute.exentity.*;
  * String updatedBy = entity.getUpdatedBy();
  * entity.setId(id);
  * entity.setTitle(title);
+ * entity.setStatus(status);
  * entity.setDeadline(deadline);
  * entity.setScheduled(scheduled);
  * entity.setCreatedAt(createdAt);
@@ -78,6 +82,9 @@ public abstract class BsTask extends AbstractEntity implements DomainEntity, Ent
 
     /** title: {NotNull, varchar(256)} */
     protected String _title;
+
+    /** status: {NotNull, bpchar(16), FK to task_status} */
+    protected String _status;
 
     /** deadline: {timestamp(29, 6)} */
     protected java.time.LocalDateTime _deadline;
@@ -122,6 +129,27 @@ public abstract class BsTask extends AbstractEntity implements DomainEntity, Ent
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
+    /** task_status by my status, named 'taskStatus'. */
+    protected OptionalEntity<TaskStatus> _taskStatus;
+
+    /**
+     * [get] task_status by my status, named 'taskStatus'. <br>
+     * Optional: alwaysPresent(), ifPresent().orElse(), get(), ...
+     * @return The entity of foreign property 'taskStatus'. (NotNull, EmptyAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public OptionalEntity<TaskStatus> getTaskStatus() {
+        if (_taskStatus == null) { _taskStatus = OptionalEntity.relationEmpty(this, "taskStatus"); }
+        return _taskStatus;
+    }
+
+    /**
+     * [set] task_status by my status, named 'taskStatus'.
+     * @param taskStatus The entity of foreign property 'taskStatus'. (NullAllowed)
+     */
+    public void setTaskStatus(OptionalEntity<TaskStatus> taskStatus) {
+        _taskStatus = taskStatus;
+    }
+
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
@@ -153,7 +181,13 @@ public abstract class BsTask extends AbstractEntity implements DomainEntity, Ent
 
     @Override
     protected String doBuildStringWithRelation(String li) {
-        return "";
+        StringBuilder sb = new StringBuilder();
+        if (_taskStatus != null && _taskStatus.isPresent())
+        { sb.append(li).append(xbRDS(_taskStatus, "taskStatus")); }
+        return sb.toString();
+    }
+    protected <ET extends Entity> String xbRDS(org.dbflute.optional.OptionalEntity<ET> et, String name) { // buildRelationDisplayString()
+        return et.get().buildDisplayString(name, true, true);
     }
 
     @Override
@@ -161,6 +195,7 @@ public abstract class BsTask extends AbstractEntity implements DomainEntity, Ent
         StringBuilder sb = new StringBuilder();
         sb.append(dm).append(xfND(_id));
         sb.append(dm).append(xfND(_title));
+        sb.append(dm).append(xfND(_status));
         sb.append(dm).append(xfND(_deadline));
         sb.append(dm).append(xfND(_scheduled));
         sb.append(dm).append(xfND(_createdAt));
@@ -176,7 +211,13 @@ public abstract class BsTask extends AbstractEntity implements DomainEntity, Ent
 
     @Override
     protected String doBuildRelationString(String dm) {
-        return "";
+        StringBuilder sb = new StringBuilder();
+        if (_taskStatus != null && _taskStatus.isPresent())
+        { sb.append(dm).append("taskStatus"); }
+        if (sb.length() > dm.length()) {
+            sb.delete(0, dm.length()).insert(0, "(").append(")");
+        }
+        return sb.toString();
     }
 
     @Override
@@ -221,6 +262,24 @@ public abstract class BsTask extends AbstractEntity implements DomainEntity, Ent
     public void setTitle(String title) {
         registerModifiedProperty("title");
         _title = title;
+    }
+
+    /**
+     * [get] status: {NotNull, bpchar(16), FK to task_status} <br>
+     * @return The value of the column 'status'. (basically NotNull if selected: for the constraint)
+     */
+    public String getStatus() {
+        checkSpecifiedProperty("status");
+        return _status;
+    }
+
+    /**
+     * [set] status: {NotNull, bpchar(16), FK to task_status} <br>
+     * @param status The value of the column 'status'. (basically NotNull if update: for the constraint)
+     */
+    public void setStatus(String status) {
+        registerModifiedProperty("status");
+        _status = status;
     }
 
     /**

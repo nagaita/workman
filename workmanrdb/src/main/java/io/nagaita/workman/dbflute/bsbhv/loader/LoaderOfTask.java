@@ -13,7 +13,7 @@ import io.nagaita.workman.dbflute.exentity.*;
  *     id
  *
  * [column]
- *     id, title, deadline, scheduled, created_at, created_by, updated_at, updated_by
+ *     id, title, status, deadline, scheduled, created_at, created_by, updated_at, updated_by
  *
  * [sequence]
  *     task_id_seq
@@ -25,13 +25,13 @@ import io.nagaita.workman.dbflute.exentity.*;
  *     
  *
  * [foreign table]
- *     
+ *     task_status
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     
+ *     taskStatus
  *
  * [referrer property]
  *     
@@ -59,6 +59,13 @@ public class LoaderOfTask {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
+    protected LoaderOfTaskStatus _foreignTaskStatusLoader;
+    public LoaderOfTaskStatus pulloutTaskStatus() {
+        if (_foreignTaskStatusLoader == null)
+        { _foreignTaskStatusLoader = new LoaderOfTaskStatus().ready(myBhv().pulloutTaskStatus(_selectedList), _selector); }
+        return _foreignTaskStatusLoader;
+    }
+
     // ===================================================================================
     //                                                                            Accessor
     //                                                                            ========

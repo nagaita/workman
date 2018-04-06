@@ -1,4 +1,4 @@
-package io.nagaita.workman.web;
+package io.nagaita.workman.web.task;
 
 import lombok.Data;
 

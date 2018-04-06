@@ -308,6 +308,141 @@ public abstract class AbstractBsTaskCQ extends AbstractConditionQuery {
     protected abstract ConditionValue xgetCValueTitle();
 
     /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @param status The value of status as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setStatus_Equal(String status) {
+        doSetStatus_Equal(fRES(status));
+    }
+
+    protected void doSetStatus_Equal(String status) {
+        regStatus(CK_EQ, status);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @param status The value of status as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setStatus_NotEqual(String status) {
+        doSetStatus_NotEqual(fRES(status));
+    }
+
+    protected void doSetStatus_NotEqual(String status) {
+        regStatus(CK_NES, status);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @param status The value of status as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setStatus_GreaterThan(String status) {
+        regStatus(CK_GT, fRES(status));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @param status The value of status as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setStatus_LessThan(String status) {
+        regStatus(CK_LT, fRES(status));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @param status The value of status as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setStatus_GreaterEqual(String status) {
+        regStatus(CK_GE, fRES(status));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @param status The value of status as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setStatus_LessEqual(String status) {
+        regStatus(CK_LE, fRES(status));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @param statusList The collection of status as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setStatus_InScope(Collection<String> statusList) {
+        doSetStatus_InScope(statusList);
+    }
+
+    protected void doSetStatus_InScope(Collection<String> statusList) {
+        regINS(CK_INS, cTL(statusList), xgetCValueStatus(), "status");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @param statusList The collection of status as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setStatus_NotInScope(Collection<String> statusList) {
+        doSetStatus_NotInScope(statusList);
+    }
+
+    protected void doSetStatus_NotInScope(Collection<String> statusList) {
+        regINS(CK_NINS, cTL(statusList), xgetCValueStatus(), "status");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status} <br>
+     * <pre>e.g. setStatus_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
+     * @param status The value of status as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param opLambda The callback for option of like-search. (NotNull)
+     */
+    public void setStatus_LikeSearch(String status, ConditionOptionCall<LikeSearchOption> opLambda) {
+        setStatus_LikeSearch(status, xcLSOP(opLambda));
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status} <br>
+     * <pre>e.g. setStatus_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param status The value of status as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    protected void setStatus_LikeSearch(String status, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(status), xgetCValueStatus(), "status", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @param status The value of status as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param opLambda The callback for option of like-search. (NotNull)
+     */
+    public void setStatus_NotLikeSearch(String status, ConditionOptionCall<LikeSearchOption> opLambda) {
+        setStatus_NotLikeSearch(status, xcLSOP(opLambda));
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * status: {NotNull, bpchar(16), FK to task_status}
+     * @param status The value of status as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    protected void setStatus_NotLikeSearch(String status, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(status), xgetCValueStatus(), "status", likeSearchOption);
+    }
+
+    protected void regStatus(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueStatus(), "status"); }
+    protected abstract ConditionValue xgetCValueStatus();
+
+    /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * deadline: {timestamp(29, 6)}
      * @param deadline The value of deadline as equal. (basically NotNull: error as default, or no condition as option)
