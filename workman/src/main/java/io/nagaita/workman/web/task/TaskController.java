@@ -27,7 +27,7 @@ public class TaskController {
 	@GetMapping("")
 	public String get(Model model) {
 		model.addAttribute("tasks", taskService.getAll());
-		return "task";
+		return "task/list";
 	}
 
 	@PostMapping("")

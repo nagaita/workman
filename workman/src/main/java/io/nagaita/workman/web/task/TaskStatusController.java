@@ -27,7 +27,7 @@ public class TaskStatusController {
 	@GetMapping("")
 	public String get(Model model) {
 		model.addAttribute("statuses", taskStatusService.getAll());
-		return "taskStatus";
+		return "task/status";
 	}
 
 	@PostMapping("")
