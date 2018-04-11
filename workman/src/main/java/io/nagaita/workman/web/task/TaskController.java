@@ -2,6 +2,7 @@ package io.nagaita.workman.web.task;
 
 import io.nagaita.workman.domain.service.TaskService;
 import lombok.AllArgsConstructor;
+import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/tasks")
@@ -33,7 +36,9 @@ public class TaskController {
 	@PostMapping("")
 	public String post(TaskForm form, BindingResult result) {
 		if (!result.hasErrors()) {
-			taskService.add(taskMapper.toModel(form));
+			val model = taskMapper.toModel(form);
+			model.setStatus("TODO"); // default
+			taskService.add(model);
 		}
 		return "redirect:/tasks";
 	}

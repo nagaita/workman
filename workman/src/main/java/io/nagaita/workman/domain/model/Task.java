@@ -13,5 +13,6 @@ public class Task {
 	private String title;
 	private LocalDateTime deadline;
 	private LocalDateTime scheduled;
+	private String status;
 
 }

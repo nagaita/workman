@@ -11,8 +11,8 @@ public class TaskMapper {
 		return Task.builder()
 				.id(form.getId())
 				.title(form.getTitle())
-				.deadline(form.getDeadline())
-				.scheduled(form.getScheduled())
+				//.deadline(LocalDateTimeform.getDeadline())
+				//.scheduled(form.getScheduled())
 				.build();
 		// @formatter:on
 	}

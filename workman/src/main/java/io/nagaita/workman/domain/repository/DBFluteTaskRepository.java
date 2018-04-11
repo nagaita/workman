@@ -33,6 +33,7 @@ public class DBFluteTaskRepository implements TaskRepository {
 		entity.setTitle(model.getTitle());
 		entity.setDeadline(model.getDeadline());
 		entity.setScheduled(model.getScheduled());
+		entity.setStatus(model.getStatus());
 		return entity;
 	}
 

@@ -9,7 +9,9 @@ public class TaskForm {
 
 	private Long id;
 	private String title;
-	private LocalDateTime deadline;
-	private LocalDateTime scheduled;
+	private String deadlineDate;
+	private String deadlineTime;
+	private String scheduledDate;
+	private String scheduledTime;
 
 }

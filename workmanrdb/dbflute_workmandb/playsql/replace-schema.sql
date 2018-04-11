@@ -9,7 +9,7 @@ CREATE TABLE task_status (
 CREATE UNIQUE INDEX ix_task_status_code ON task_status(code);
 
 CREATE TABLE task (
-   id BIGSERIAL PRIMARY KEY,
+   id SERIAL PRIMARY KEY,
    title VARCHAR(256) NOT NULL,
    status CHAR(16) REFERENCES task_status(code) NOT NULL,
    deadline TIMESTAMP,
