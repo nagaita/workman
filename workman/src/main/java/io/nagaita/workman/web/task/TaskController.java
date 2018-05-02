@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -45,8 +46,15 @@ public class TaskController {
 
 	@GetMapping("/{id}")
 	public String get(@PathVariable Long id, Model model) {
-		Task task = taskService.get(id);
-		model.addAttribute("task", task);
+		model.addAttribute("statusOptions", taskService.selectAllStatusAsMap());
+		model.addAttribute("taskForm", taskMapper.toForm(taskService.get(id)));
 		return "task/detail";
+	}
+
+	@PutMapping("/{id}")
+	public String put(@PathVariable Long id, TaskForm form, Model model) {
+		Task task = taskMapper.toModel(form);
+		taskService.update(task);
+		return "redirect:/tasks";
 	}
 }

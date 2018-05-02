@@ -3,6 +3,7 @@ package io.nagaita.workman.domain.service;
 import io.nagaita.workman.domain.model.Task;
 
 import java.util.List;
+import java.util.Map;
 
 public interface TaskService {
 
@@ -11,4 +12,8 @@ public interface TaskService {
 	List<Task> getAll();
 
 	Task get(Long id);
+
+	Map<String, String> selectAllStatusAsMap();
+
+	void update(Task task);
 }

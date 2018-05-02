@@ -11,4 +11,6 @@ public interface TaskRepository {
 	void add(Task task);
 
 	Task get(Long id);
+
+	void update(Task task);
 }

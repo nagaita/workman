@@ -15,18 +15,18 @@
         <form action="/tasks" method="POST">
         <@spring.bind "taskForm"/>
             <div>
-            <@spring.formInput "taskForm.title", 'class="form-control"'/>
                 <label for="title">Title</label>
+            <@spring.formInput "taskForm.title"/>
             </div>
             <div>
-            <@spring.formInput "taskForm.deadlineDate", 'class="form-control"', "date"/>
-            <@spring.formInput "taskForm.deadlineTime", 'class="form-control"', "time"/>
                 <label for="title">Deadline</label>
+            <@spring.formInput "taskForm.deadlineDate", "date"/>
+            <@spring.formInput "taskForm.deadlineTime", "time"/>
             </div>
             <div>
-            <@spring.formInput "taskForm.scheduledDate", 'class="form-control"', "date"/>
-            <@spring.formInput "taskForm.scheduledTime", 'class="form-control"', "time"/>
                 <label for="title">Scheduled</label>
+            <@spring.formInput "taskForm.scheduledDate", "date"/>
+            <@spring.formInput "taskForm.scheduledTime", "time"/>
             </div>
             <input type="submit" value="Add"/>
         </form>
@@ -39,6 +39,7 @@
                 <th></th>
                 <th>ID</th>
                 <th>Title</th>
+                <th>Status</th>
                 <th>Deadline</th>
                 <th>Scheduled</th>
             </tr>
@@ -47,8 +48,9 @@
             <#list tasks as task>
             <tr>
                 <td></td>
-                <td><a href="tasks/${task.id}">${task.id}</a></td>
+                <td><a href="/tasks/${task.id}">${task.id}</a></td>
                 <td>${task.title}</td>
+                <td>${task.status!}</td>
                 <td>${task.deadline!}</td>
                 <td>${task.scheduled!}</td>
             </tr>

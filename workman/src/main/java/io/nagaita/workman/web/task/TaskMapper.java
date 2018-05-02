@@ -11,8 +11,19 @@ public class TaskMapper {
 		return Task.builder()
 				.id(form.getId())
 				.title(form.getTitle())
+				.status(form.getStatus())
 				//.deadline(LocalDateTimeform.getDeadline())
 				//.scheduled(form.getScheduled())
+				.build();
+		// @formatter:on
+	}
+
+	public TaskForm toForm(Task model) {
+		// @formatter:off
+		return TaskForm.builder()
+				.id(model.getId())
+				.title(model.getTitle())
+				.status(model.getStatus())
 				.build();
 		// @formatter:on
 	}

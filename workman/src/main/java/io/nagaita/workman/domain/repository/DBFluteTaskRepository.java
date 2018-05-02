@@ -21,6 +21,7 @@ public class DBFluteTaskRepository implements TaskRepository {
 		return Task.builder()
 				.id(entity.getId())
 				.title(entity.getTitle())
+				.status(entity.getStatus())
 				.deadline(entity.getDeadline())
 				.scheduled(entity.getScheduled())
 				.build();
@@ -31,6 +32,7 @@ public class DBFluteTaskRepository implements TaskRepository {
 		val entity = new io.nagaita.workman.dbflute.exentity.Task();
 		entity.setId(model.getId());
 		entity.setTitle(model.getTitle());
+		entity.setStatus(model.getStatus());
 		entity.setDeadline(model.getDeadline());
 		entity.setScheduled(model.getScheduled());
 		entity.setStatus(model.getStatus());
@@ -55,6 +57,11 @@ public class DBFluteTaskRepository implements TaskRepository {
 			cb.query().setId_Equal(id);
 		}).orElseThrow(() -> new IllegalArgumentException("Task.id = " + id + "does not exist."));
 		return entity2model(entity);
+	}
+
+	@Override
+	public void update(Task task) {
+		taskBhv.update(model2entity(task));
 	}
 
 }
