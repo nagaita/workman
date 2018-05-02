@@ -7,8 +7,7 @@ import lombok.Getter;
 @Getter
 public enum URL {
 
-	TASK("/tasks", "task/task"),
-	TASK_STATUS("/task-status", "task/task-status");
+	TASK("/tasks", "task/task"), TASK_STATUS("/task-status", "task/task-status");
 
 	private String url;
 	private String template;
