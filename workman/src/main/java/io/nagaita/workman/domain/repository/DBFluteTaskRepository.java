@@ -49,4 +49,12 @@ public class DBFluteTaskRepository implements TaskRepository {
 		taskBhv.insert(model2entity(task));
 	}
 
+	@Override
+	public Task get(Long id) {
+		io.nagaita.workman.dbflute.exentity.Task entity = taskBhv.selectEntity(cb -> {
+			cb.query().setId_Equal(id);
+		}).orElseThrow(() -> new IllegalArgumentException("Task.id = " + id + "does not exist."));
+		return entity2model(entity);
+	}
+
 }

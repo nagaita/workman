@@ -10,4 +10,5 @@ public interface TaskService {
 
 	List<Task> getAll();
 
+	Task get(Long id);
 }

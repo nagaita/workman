@@ -22,6 +22,11 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
+	public Task get(Long id) {
+		return taskRepository.get(id);
+	}
+
+	@Override
 	@Transactional
 	public void add(Task task) {
 		taskRepository.add(task);

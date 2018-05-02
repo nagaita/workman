@@ -1,5 +1,6 @@
 package io.nagaita.workman.web.task;
 
+import io.nagaita.workman.domain.model.Task;
 import io.nagaita.workman.domain.service.TaskService;
 import lombok.AllArgsConstructor;
 import lombok.val;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -39,5 +41,12 @@ public class TaskController {
 			taskService.add(model);
 		}
 		return "redirect:/tasks";
+	}
+
+	@GetMapping("/{id}")
+	public String get(@PathVariable Long id, Model model) {
+		Task task = taskService.get(id);
+		model.addAttribute("task", task);
+		return "task/detail";
 	}
 }

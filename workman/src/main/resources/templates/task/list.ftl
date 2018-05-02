@@ -46,9 +46,8 @@
             <tbody>
             <#list tasks as task>
             <tr>
-                <td>
-                </td>
-                <td>${task.id}</td>
+                <td></td>
+                <td><a href="tasks/${task.id}">${task.id}</a></td>
                 <td>${task.title}</td>
                 <td>${task.deadline!}</td>
                 <td>${task.scheduled!}</td>
